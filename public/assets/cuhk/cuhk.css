@@ -1,0 +1,16 @@
+body {
+background: none;
+background-color: white;
+ 
+}
+
+a {
+target-name:new;
+target-new:tab;
+
+}
+
+/* mouse over link */
+.note-content a:hover {
+    color: #FF00FF;
+}

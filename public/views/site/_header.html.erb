@@ -1,0 +1,70 @@
+<%# Add this file to plugins/local/public/views/site/_header.html.erb to override
+https://github.com/archivesspace/archivesspace/blob/master/public/app/views/site/_header.html.erb
+%>
+ 
+<%# here we add the custom stylesheet %>
+<%= stylesheet_link_tag("#{AppConfig[:frontend_prefix]}assets/cuhk/cuhk.css", :media => "all").html_safe %>
+<%= stylesheet_link_tag("#{AppConfig[:frontend_prefix]}assets/cuhk/slideshow.css", :media => "all").html_safe %>
+
+<%# here we add the custom javascript %> 
+<%= javascript_include_tag "#{AppConfig[:frontend_prefix]}assets/cuhk/ssw.js" %>
+
+<!-- Google Analytics starts -->
+<script type="text/javascript">
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53225262-1', 'auto');
+  ga('send', 'pageview');
+
+//  alert("cuhk archivesspace");
+
+</script>
+<!-- Google Analytics ends -->
+
+
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="nav-collapse collapse">
+<div class="container top">
+<ul class="nav">
+<li <% if controller_name === "site" and controller.action_name === "index" %>class="active"<% end %>>
+<%= link_to raw('<span class="icon-home"></span>'), :controller => :site, :action => :index %>
+</li
+<%# here we remove what we don't want in our list %>
+<li class="divider-vertical"></li>
+<li <% if params["type"]==="resource"%> class="active" <% end%>><%= link_to I18n.t("resource._plural"), {:controller => :search, :action => :search, :type => "resource"} %></li>
+<li <% if params["type"]==="digital_object"%> class="active" <% end%>><%= link_to I18n.t("digital_object._plural"), {:controller => :search, :action => :search, :type => "digital_object"} %></li>
+<!--<li <% if params["type"]==="accession"%> class="active" <% end%>><%= link_to I18n.t("accession._plural"), {:controller => :search, :action => :search, :type => "accession"} %></li>-->
+<li <% if params["type"]==="subject"%> class="active" <% end%>><%= link_to I18n.t("subject._plural"), {:controller => :search, :action => :search, :type => "subject"} %></li>
+<li <% if params["type"]==="agent"%> class="active" <% end%>><%= link_to I18n.t("agent._plural"), {:controller => :search, :action => :search, :type => "agent"} %></li>
+<!--<li <% if params["type"]==="accession"%> class="active" <% end%>><%= link_to I18n.t("accession._plural"), {:controller => :search, :action => :search, :type => "accession"} %></li>-->
+<% if not current_page?(root_url) %>
+<li class="pull-right">
+<%= form_tag(url_for(:controller => :search, :action => :search), :method => :get, :class => "navbar-form pull-left") do %>
+<div class="input-append">
+<input id="global-search-box" type="text" class="span2" placeholder="<%= I18n.t("navbar.search_placeholder") %>" name="q" value="<%= params[:q] %>"/>
+<div class="btn-group">
+<button id="global-search-button" class="btn"><span class=" icon-search"></span></button>
+<%= link_to "<span class='icon-chevron-down'></span>".html_safe, { :advanced => nil }, { :class => "btn search-switcher last", :style => params["advanced"]?"display:none":"" } %>
+<%= link_to "<span class='icon-chevron-up'></span>".html_safe, { :advanced => true }, { :class => "btn search-switcher last", :style => params["advanced"]?"":"display:none" } %>
+</div>
+</div>
+<% end %>
+</li>
+<% end %>
+</ul>
+</div>
+</div><!-- /.nav-collapse -->
+</div>
+</div><!-- /navbar-inner -->
+</div>

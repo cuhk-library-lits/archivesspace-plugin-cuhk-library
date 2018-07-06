@@ -1,0 +1,96 @@
+<%# This file goes in plugins/local/public/views/site/index.html.erb %>
+<%# this is just a copy of the original template from https://github.com/archivesspace/archivesspace/blob/master/public/app/views/site/index.html.erb with one line changed %>
+ 
+<% set_title I18n.t("brand.home") %>
+ 
+<br/>
+ 
+<div class="well">
+<div class="row-fluid">
+<div class="span8">
+<h3><%= I18n.t("brand.welcome_message") %></h3>
+
+<%# CUHK customization starts %>
+<%= t("brand.intro.html") %>
+<%= t("brand.tips1.html") %>
+<%# CUHK customization ends %>
+
+<!-- start search box -->
+<!-------------------------------------------------------------------->
+<div class="tab-content">
+<div id="simpleSearch" class="tab-pane active">
+<%= render_aspace_partial :partial => "simple_search" %>
+</div>
+<div id="advancedSearch" class="tab-pane">
+<%= render_aspace_partial :partial => "advanced_search" %>
+</div>
+</div>
+ 
+<ul class="search-switcher">
+<li class="active">
+<a href="#simpleSearch" data-toggle="tab"><%= I18n.t("actions.hide_advanced_search") %></a>
+</li>
+<li>
+<a href="#advancedSearch" data-toggle="tab"><%= I18n.t("actions.show_advanced_search") %></a>
+</li>
+</ul>
+<!-------------------------------------------------------------------->
+<!-- end search box -->
+
+
+<%# CUHK customization starts %>
+<%= t("brand.tips2.html") %>
+<%# CUHK customization ends %>
+
+</div>
+
+<!-- ------------------------------------------------------------ -->
+<div class="span4">
+<!-- start of slideshow -->   
+<script language="JavaScript" type="text/javascript">                                                                                
+<!--
+
+var SlideShow_MaxSlides = 4; // slide count
+var SlideShow_DisplaySeconds = 5; // slide timing
+var SlideShow_CurrentSlide = 1;
+var SlideShow_Timer;
+var SlideShow_Playing = true;
+SlideShow_Timer = setTimeout(SlideShow_Next, SlideShow_DisplaySeconds * 1000);
+
+//-->
+</script>
+ 
+<div id="SlideShowWidget">
+ 
+  <div class="ssw_all_descriptions">
+    <div id="ssw_descript_1" class='ssw_description firstSlide'><div id="ssw_slide_1" class='ssw_slide firstSlide'><img src="/assets/photo_01.jpg" width="300" border="0" /></div></div>
+    <div id="ssw_descript_2" class='ssw_description' style="display:none;"><div id="ssw_slide_2" class='ssw_slide'><img src="/assets/photo_02.jpg" width="300" border="0" /></div></div>
+    <div id="ssw_descript_3" class='ssw_description' style="display:none;"><div id="ssw_slide_3" class='ssw_slide'><img src="/assets/photo_03.jpg" width="300" border="0" /></div></div>
+    <div id="ssw_descript_4" class='ssw_description' style="display:none;"><div id="ssw_slide_4" class='ssw_slide'><img src="/assets/photo_04.jpg" width="300" border="0" /></div></div>
+<!--
+    <div id="ssw_descript_5" class='ssw_description' style="display:none;"><div id="ssw_slide_5" class='ssw_slide'><img src="/assets/photo_05.jpg" width="300" border="0" /></div></div>
+    <div id="ssw_descript_6" class='ssw_description' style="display:none;"><div id="ssw_slide_6" class='ssw_slide'><img src="/assets/photo_06.jpg" width="300" border="0" /></div></div>
+    <div id="ssw_descript_7" class='ssw_description' style="display:none;"><div id="ssw_slide_7" class='ssw_slide'><img src="/assets/photo_07.jpg" width="300" border="0" /></div></div>    
+-->
+  </div>
+    
+  <div class="ssw_all_icons" align="center">
+    <div class="prevnext" onclick="return SlideShow_Previous();"><span class="icon-backward" title="Backward"></span></div>
+    <div id="ssw_icon_1" class='ssw_icon_active' onclick="return SlideShow_Jump(1);">&nbsp;</div>
+    <div id="ssw_icon_2" class='ssw_icon_inactive' onclick="return SlideShow_Jump(2);">&nbsp;</div>
+    <div id="ssw_icon_3" class='ssw_icon_inactive' onclick="return SlideShow_Jump(3);">&nbsp;</div>
+	<div id="ssw_icon_4" class='ssw_icon_inactive' onclick="return SlideShow_Jump(4);">&nbsp;</div>
+<!--
+    <div id="ssw_icon_5" class='ssw_icon_inactive' onclick="return SlideShow_Jump(5);">&nbsp;</div>
+    <div id="ssw_icon_6" class='ssw_icon_inactive' onclick="return SlideShow_Jump(6);">&nbsp;</div>
+    <div id="ssw_icon_7" class='ssw_icon_inactive' onclick="return SlideShow_Jump(7);">&nbsp;</div>
+-->
+    <div class="prevnext" onclick="return SlideShow_Next();"><span class="icon-forward" title="Forward"></span></div>
+  </div>
+</div>
+<!-- end of slideshow -->
+ </div>
+<!-- ------------------------------------------------------------ -->
+
+</div>
+</div>
