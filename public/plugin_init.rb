@@ -1,0 +1,1 @@
+Plugins::add_menu_item('/', 'brand.home', 0)
