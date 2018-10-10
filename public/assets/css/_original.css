@@ -1,0 +1,4594 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("/assets/font-awesome/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot?v=4.7.0");
+    src: url("/assets/font-awesome/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot?v=4.7.0#iefix") format("embedded-opentype"), url("/assets/font-awesome/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2?v=4.7.0") format("woff2"), url("/assets/font-awesome/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff?v=4.7.0") format("woff"), url("/assets/font-awesome/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf?v=4.7.0") format("truetype"), url("/assets/font-awesome/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg?v=4.7.0#fontawesomeregular") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.fa-lg {
+    font-size: 1.3333333333em;
+    line-height: 0.75em;
+    vertical-align: -15%
+}
+
+.fa-2x {
+    font-size: 2em
+}
+
+.fa-3x {
+    font-size: 3em
+}
+
+.fa-4x {
+    font-size: 4em
+}
+
+.fa-5x {
+    font-size: 5em
+}
+
+.fa-fw {
+    width: 1.2857142857em;
+    text-align: center
+}
+
+.fa-ul {
+    padding-left: 0;
+    margin-left: 2.1428571429em;
+    list-style-type: none
+}
+
+.fa-ul>li {
+    position: relative
+}
+
+.fa-li {
+    position: absolute;
+    left: -2.1428571429em;
+    width: 2.1428571429em;
+    top: 0.1428571429em;
+    text-align: center
+}
+
+.fa-li.fa-lg {
+    left: -1.8571428571em
+}
+
+.fa-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eee;
+    border-radius: .1em
+}
+
+.fa-pull-left {
+    float: left
+}
+
+.fa-pull-right {
+    float: right
+}
+
+.fa.fa-pull-left {
+    margin-right: .3em
+}
+
+.fa.fa-pull-right {
+    margin-left: .3em
+}
+
+.pull-right {
+    float: right
+}
+
+.pull-left {
+    float: left
+}
+
+.fa.pull-left {
+    margin-right: .3em
+}
+
+.fa.pull-right {
+    margin-left: .3em
+}
+
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear
+}
+
+.fa-pulse {
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8)
+}
+
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+.fa-rotate-90 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.fa-rotate-180 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.fa-rotate-270 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg)
+}
+
+.fa-flip-horizontal {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1)
+}
+
+.fa-flip-vertical {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1)
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+    filter: none
+}
+
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center
+}
+
+.fa-stack-1x {
+    line-height: inherit
+}
+
+.fa-stack-2x {
+    font-size: 2em
+}
+
+.fa-inverse {
+    color: #fff
+}
+
+.fa-glass:before {
+    content: ""
+}
+
+.fa-music:before {
+    content: ""
+}
+
+.fa-search:before {
+    content: ""
+}
+
+.fa-envelope-o:before {
+    content: ""
+}
+
+.fa-heart:before {
+    content: ""
+}
+
+.fa-star:before {
+    content: ""
+}
+
+.fa-star-o:before {
+    content: ""
+}
+
+.fa-user:before {
+    content: ""
+}
+
+.fa-film:before {
+    content: ""
+}
+
+.fa-th-large:before {
+    content: ""
+}
+
+.fa-th:before {
+    content: ""
+}
+
+.fa-th-list:before {
+    content: ""
+}
+
+.fa-check:before {
+    content: ""
+}
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+    content: ""
+}
+
+.fa-search-plus:before {
+    content: ""
+}
+
+.fa-search-minus:before {
+    content: ""
+}
+
+.fa-power-off:before {
+    content: ""
+}
+
+.fa-signal:before {
+    content: ""
+}
+
+.fa-gear:before,
+.fa-cog:before {
+    content: ""
+}
+
+.fa-trash-o:before {
+    content: ""
+}
+
+.fa-home:before {
+    content: ""
+}
+
+.fa-file-o:before {
+    content: ""
+}
+
+.fa-clock-o:before {
+    content: ""
+}
+
+.fa-road:before {
+    content: ""
+}
+
+.fa-download:before {
+    content: ""
+}
+
+.fa-arrow-circle-o-down:before {
+    content: ""
+}
+
+.fa-arrow-circle-o-up:before {
+    content: ""
+}
+
+.fa-inbox:before {
+    content: ""
+}
+
+.fa-play-circle-o:before {
+    content: ""
+}
+
+.fa-rotate-right:before,
+.fa-repeat:before {
+    content: ""
+}
+
+.fa-refresh:before {
+    content: ""
+}
+
+.fa-list-alt:before {
+    content: ""
+}
+
+.fa-lock:before {
+    content: ""
+}
+
+.fa-flag:before {
+    content: ""
+}
+
+.fa-headphones:before {
+    content: ""
+}
+
+.fa-volume-off:before {
+    content: ""
+}
+
+.fa-volume-down:before {
+    content: ""
+}
+
+.fa-volume-up:before {
+    content: ""
+}
+
+.fa-qrcode:before {
+    content: ""
+}
+
+.fa-barcode:before {
+    content: ""
+}
+
+.fa-tag:before {
+    content: ""
+}
+
+.fa-tags:before {
+    content: ""
+}
+
+.fa-book:before {
+    content: ""
+}
+
+.fa-bookmark:before {
+    content: ""
+}
+
+.fa-print:before {
+    content: ""
+}
+
+.fa-camera:before {
+    content: ""
+}
+
+.fa-font:before {
+    content: ""
+}
+
+.fa-bold:before {
+    content: ""
+}
+
+.fa-italic:before {
+    content: ""
+}
+
+.fa-text-height:before {
+    content: ""
+}
+
+.fa-text-width:before {
+    content: ""
+}
+
+.fa-align-left:before {
+    content: ""
+}
+
+.fa-align-center:before {
+    content: ""
+}
+
+.fa-align-right:before {
+    content: ""
+}
+
+.fa-align-justify:before {
+    content: ""
+}
+
+.fa-list:before {
+    content: ""
+}
+
+.fa-dedent:before,
+.fa-outdent:before {
+    content: ""
+}
+
+.fa-indent:before {
+    content: ""
+}
+
+.fa-video-camera:before {
+    content: ""
+}
+
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before {
+    content: ""
+}
+
+.fa-pencil:before {
+    content: ""
+}
+
+.fa-map-marker:before {
+    content: ""
+}
+
+.fa-adjust:before {
+    content: ""
+}
+
+.fa-tint:before {
+    content: ""
+}
+
+.fa-edit:before,
+.fa-pencil-square-o:before {
+    content: ""
+}
+
+.fa-share-square-o:before {
+    content: ""
+}
+
+.fa-check-square-o:before {
+    content: ""
+}
+
+.fa-arrows:before {
+    content: ""
+}
+
+.fa-step-backward:before {
+    content: ""
+}
+
+.fa-fast-backward:before {
+    content: ""
+}
+
+.fa-backward:before {
+    content: ""
+}
+
+.fa-play:before {
+    content: ""
+}
+
+.fa-pause:before {
+    content: ""
+}
+
+.fa-stop:before {
+    content: ""
+}
+
+.fa-forward:before {
+    content: ""
+}
+
+.fa-fast-forward:before {
+    content: ""
+}
+
+.fa-step-forward:before {
+    content: ""
+}
+
+.fa-eject:before {
+    content: ""
+}
+
+.fa-chevron-left:before {
+    content: ""
+}
+
+.fa-chevron-right:before {
+    content: ""
+}
+
+.fa-plus-circle:before {
+    content: ""
+}
+
+.fa-minus-circle:before {
+    content: ""
+}
+
+.fa-times-circle:before {
+    content: ""
+}
+
+.fa-check-circle:before {
+    content: ""
+}
+
+.fa-question-circle:before {
+    content: ""
+}
+
+.fa-info-circle:before {
+    content: ""
+}
+
+.fa-crosshairs:before {
+    content: ""
+}
+
+.fa-times-circle-o:before {
+    content: ""
+}
+
+.fa-check-circle-o:before {
+    content: ""
+}
+
+.fa-ban:before {
+    content: ""
+}
+
+.fa-arrow-left:before {
+    content: ""
+}
+
+.fa-arrow-right:before {
+    content: ""
+}
+
+.fa-arrow-up:before {
+    content: ""
+}
+
+.fa-arrow-down:before {
+    content: ""
+}
+
+.fa-mail-forward:before,
+.fa-share:before {
+    content: ""
+}
+
+.fa-expand:before {
+    content: ""
+}
+
+.fa-compress:before {
+    content: ""
+}
+
+.fa-plus:before {
+    content: ""
+}
+
+.fa-minus:before {
+    content: ""
+}
+
+.fa-asterisk:before {
+    content: ""
+}
+
+.fa-exclamation-circle:before {
+    content: ""
+}
+
+.fa-gift:before {
+    content: ""
+}
+
+.fa-leaf:before {
+    content: ""
+}
+
+.fa-fire:before {
+    content: ""
+}
+
+.fa-eye:before {
+    content: ""
+}
+
+.fa-eye-slash:before {
+    content: ""
+}
+
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+    content: ""
+}
+
+.fa-plane:before {
+    content: ""
+}
+
+.fa-calendar:before {
+    content: ""
+}
+
+.fa-random:before {
+    content: ""
+}
+
+.fa-comment:before {
+    content: ""
+}
+
+.fa-magnet:before {
+    content: ""
+}
+
+.fa-chevron-up:before {
+    content: ""
+}
+
+.fa-chevron-down:before {
+    content: ""
+}
+
+.fa-retweet:before {
+    content: ""
+}
+
+.fa-shopping-cart:before {
+    content: ""
+}
+
+.fa-folder:before {
+    content: ""
+}
+
+.fa-folder-open:before {
+    content: ""
+}
+
+.fa-arrows-v:before {
+    content: ""
+}
+
+.fa-arrows-h:before {
+    content: ""
+}
+
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
+    content: ""
+}
+
+.fa-twitter-square:before {
+    content: ""
+}
+
+.fa-facebook-square:before {
+    content: ""
+}
+
+.fa-camera-retro:before {
+    content: ""
+}
+
+.fa-key:before {
+    content: ""
+}
+
+.fa-gears:before,
+.fa-cogs:before {
+    content: ""
+}
+
+.fa-comments:before {
+    content: ""
+}
+
+.fa-thumbs-o-up:before {
+    content: ""
+}
+
+.fa-thumbs-o-down:before {
+    content: ""
+}
+
+.fa-star-half:before {
+    content: ""
+}
+
+.fa-heart-o:before {
+    content: ""
+}
+
+.fa-sign-out:before {
+    content: ""
+}
+
+.fa-linkedin-square:before {
+    content: ""
+}
+
+.fa-thumb-tack:before {
+    content: ""
+}
+
+.fa-external-link:before {
+    content: ""
+}
+
+.fa-sign-in:before {
+    content: ""
+}
+
+.fa-trophy:before {
+    content: ""
+}
+
+.fa-github-square:before {
+    content: ""
+}
+
+.fa-upload:before {
+    content: ""
+}
+
+.fa-lemon-o:before {
+    content: ""
+}
+
+.fa-phone:before {
+    content: ""
+}
+
+.fa-square-o:before {
+    content: ""
+}
+
+.fa-bookmark-o:before {
+    content: ""
+}
+
+.fa-phone-square:before {
+    content: ""
+}
+
+.fa-twitter:before {
+    content: ""
+}
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+    content: ""
+}
+
+.fa-github:before {
+    content: ""
+}
+
+.fa-unlock:before {
+    content: ""
+}
+
+.fa-credit-card:before {
+    content: ""
+}
+
+.fa-feed:before,
+.fa-rss:before {
+    content: ""
+}
+
+.fa-hdd-o:before {
+    content: ""
+}
+
+.fa-bullhorn:before {
+    content: ""
+}
+
+.fa-bell:before {
+    content: ""
+}
+
+.fa-certificate:before {
+    content: ""
+}
+
+.fa-hand-o-right:before {
+    content: ""
+}
+
+.fa-hand-o-left:before {
+    content: ""
+}
+
+.fa-hand-o-up:before {
+    content: ""
+}
+
+.fa-hand-o-down:before {
+    content: ""
+}
+
+.fa-arrow-circle-left:before {
+    content: ""
+}
+
+.fa-arrow-circle-right:before {
+    content: ""
+}
+
+.fa-arrow-circle-up:before {
+    content: ""
+}
+
+.fa-arrow-circle-down:before {
+    content: ""
+}
+
+.fa-globe:before {
+    content: ""
+}
+
+.fa-wrench:before {
+    content: ""
+}
+
+.fa-tasks:before {
+    content: ""
+}
+
+.fa-filter:before {
+    content: ""
+}
+
+.fa-briefcase:before {
+    content: ""
+}
+
+.fa-arrows-alt:before {
+    content: ""
+}
+
+.fa-group:before,
+.fa-users:before {
+    content: ""
+}
+
+.fa-chain:before,
+.fa-link:before {
+    content: ""
+}
+
+.fa-cloud:before {
+    content: ""
+}
+
+.fa-flask:before {
+    content: ""
+}
+
+.fa-cut:before,
+.fa-scissors:before {
+    content: ""
+}
+
+.fa-copy:before,
+.fa-files-o:before {
+    content: ""
+}
+
+.fa-paperclip:before {
+    content: ""
+}
+
+.fa-save:before,
+.fa-floppy-o:before {
+    content: ""
+}
+
+.fa-square:before {
+    content: ""
+}
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+    content: ""
+}
+
+.fa-list-ul:before {
+    content: ""
+}
+
+.fa-list-ol:before {
+    content: ""
+}
+
+.fa-strikethrough:before {
+    content: ""
+}
+
+.fa-underline:before {
+    content: ""
+}
+
+.fa-table:before {
+    content: ""
+}
+
+.fa-magic:before {
+    content: ""
+}
+
+.fa-truck:before {
+    content: ""
+}
+
+.fa-pinterest:before {
+    content: ""
+}
+
+.fa-pinterest-square:before {
+    content: ""
+}
+
+.fa-google-plus-square:before {
+    content: ""
+}
+
+.fa-google-plus:before {
+    content: ""
+}
+
+.fa-money:before {
+    content: ""
+}
+
+.fa-caret-down:before {
+    content: ""
+}
+
+.fa-caret-up:before {
+    content: ""
+}
+
+.fa-caret-left:before {
+    content: ""
+}
+
+.fa-caret-right:before {
+    content: ""
+}
+
+.fa-columns:before {
+    content: ""
+}
+
+.fa-unsorted:before,
+.fa-sort:before {
+    content: ""
+}
+
+.fa-sort-down:before,
+.fa-sort-desc:before {
+    content: ""
+}
+
+.fa-sort-up:before,
+.fa-sort-asc:before {
+    content: ""
+}
+
+.fa-envelope:before {
+    content: ""
+}
+
+.fa-linkedin:before {
+    content: ""
+}
+
+.fa-rotate-left:before,
+.fa-undo:before {
+    content: ""
+}
+
+.fa-legal:before,
+.fa-gavel:before {
+    content: ""
+}
+
+.fa-dashboard:before,
+.fa-tachometer:before {
+    content: ""
+}
+
+.fa-comment-o:before {
+    content: ""
+}
+
+.fa-comments-o:before {
+    content: ""
+}
+
+.fa-flash:before,
+.fa-bolt:before {
+    content: ""
+}
+
+.fa-sitemap:before {
+    content: ""
+}
+
+.fa-umbrella:before {
+    content: ""
+}
+
+.fa-paste:before,
+.fa-clipboard:before {
+    content: ""
+}
+
+.fa-lightbulb-o:before {
+    content: ""
+}
+
+.fa-exchange:before {
+    content: ""
+}
+
+.fa-cloud-download:before {
+    content: ""
+}
+
+.fa-cloud-upload:before {
+    content: ""
+}
+
+.fa-user-md:before {
+    content: ""
+}
+
+.fa-stethoscope:before {
+    content: ""
+}
+
+.fa-suitcase:before {
+    content: ""
+}
+
+.fa-bell-o:before {
+    content: ""
+}
+
+.fa-coffee:before {
+    content: ""
+}
+
+.fa-cutlery:before {
+    content: ""
+}
+
+.fa-file-text-o:before {
+    content: ""
+}
+
+.fa-building-o:before {
+    content: ""
+}
+
+.fa-hospital-o:before {
+    content: ""
+}
+
+.fa-ambulance:before {
+    content: ""
+}
+
+.fa-medkit:before {
+    content: ""
+}
+
+.fa-fighter-jet:before {
+    content: ""
+}
+
+.fa-beer:before {
+    content: ""
+}
+
+.fa-h-square:before {
+    content: ""
+}
+
+.fa-plus-square:before {
+    content: ""
+}
+
+.fa-angle-double-left:before {
+    content: ""
+}
+
+.fa-angle-double-right:before {
+    content: ""
+}
+
+.fa-angle-double-up:before {
+    content: ""
+}
+
+.fa-angle-double-down:before {
+    content: ""
+}
+
+.fa-angle-left:before {
+    content: ""
+}
+
+.fa-angle-right:before {
+    content: ""
+}
+
+.fa-angle-up:before {
+    content: ""
+}
+
+.fa-angle-down:before {
+    content: ""
+}
+
+.fa-desktop:before {
+    content: ""
+}
+
+.fa-laptop:before {
+    content: ""
+}
+
+.fa-tablet:before {
+    content: ""
+}
+
+.fa-mobile-phone:before,
+.fa-mobile:before {
+    content: ""
+}
+
+.fa-circle-o:before {
+    content: ""
+}
+
+.fa-quote-left:before {
+    content: ""
+}
+
+.fa-quote-right:before {
+    content: ""
+}
+
+.fa-spinner:before {
+    content: ""
+}
+
+.fa-circle:before {
+    content: ""
+}
+
+.fa-mail-reply:before,
+.fa-reply:before {
+    content: ""
+}
+
+.fa-github-alt:before {
+    content: ""
+}
+
+.fa-folder-o:before {
+    content: ""
+}
+
+.fa-folder-open-o:before {
+    content: ""
+}
+
+.fa-smile-o:before {
+    content: ""
+}
+
+.fa-frown-o:before {
+    content: ""
+}
+
+.fa-meh-o:before {
+    content: ""
+}
+
+.fa-gamepad:before {
+    content: ""
+}
+
+.fa-keyboard-o:before {
+    content: ""
+}
+
+.fa-flag-o:before {
+    content: ""
+}
+
+.fa-flag-checkered:before {
+    content: ""
+}
+
+.fa-terminal:before {
+    content: ""
+}
+
+.fa-code:before {
+    content: ""
+}
+
+.fa-mail-reply-all:before,
+.fa-reply-all:before {
+    content: ""
+}
+
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+    content: ""
+}
+
+.fa-location-arrow:before {
+    content: ""
+}
+
+.fa-crop:before {
+    content: ""
+}
+
+.fa-code-fork:before {
+    content: ""
+}
+
+.fa-unlink:before,
+.fa-chain-broken:before {
+    content: ""
+}
+
+.fa-question:before {
+    content: ""
+}
+
+.fa-info:before {
+    content: ""
+}
+
+.fa-exclamation:before {
+    content: ""
+}
+
+.fa-superscript:before {
+    content: ""
+}
+
+.fa-subscript:before {
+    content: ""
+}
+
+.fa-eraser:before {
+    content: ""
+}
+
+.fa-puzzle-piece:before {
+    content: ""
+}
+
+.fa-microphone:before {
+    content: ""
+}
+
+.fa-microphone-slash:before {
+    content: ""
+}
+
+.fa-shield:before {
+    content: ""
+}
+
+.fa-calendar-o:before {
+    content: ""
+}
+
+.fa-fire-extinguisher:before {
+    content: ""
+}
+
+.fa-rocket:before {
+    content: ""
+}
+
+.fa-maxcdn:before {
+    content: ""
+}
+
+.fa-chevron-circle-left:before {
+    content: ""
+}
+
+.fa-chevron-circle-right:before {
+    content: ""
+}
+
+.fa-chevron-circle-up:before {
+    content: ""
+}
+
+.fa-chevron-circle-down:before {
+    content: ""
+}
+
+.fa-html5:before {
+    content: ""
+}
+
+.fa-css3:before {
+    content: ""
+}
+
+.fa-anchor:before {
+    content: ""
+}
+
+.fa-unlock-alt:before {
+    content: ""
+}
+
+.fa-bullseye:before {
+    content: ""
+}
+
+.fa-ellipsis-h:before {
+    content: ""
+}
+
+.fa-ellipsis-v:before {
+    content: ""
+}
+
+.fa-rss-square:before {
+    content: ""
+}
+
+.fa-play-circle:before {
+    content: ""
+}
+
+.fa-ticket:before {
+    content: ""
+}
+
+.fa-minus-square:before {
+    content: ""
+}
+
+.fa-minus-square-o:before {
+    content: ""
+}
+
+.fa-level-up:before {
+    content: ""
+}
+
+.fa-level-down:before {
+    content: ""
+}
+
+.fa-check-square:before {
+    content: ""
+}
+
+.fa-pencil-square:before {
+    content: ""
+}
+
+.fa-external-link-square:before {
+    content: ""
+}
+
+.fa-share-square:before {
+    content: ""
+}
+
+.fa-compass:before {
+    content: ""
+}
+
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+    content: ""
+}
+
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+    content: ""
+}
+
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+    content: ""
+}
+
+.fa-euro:before,
+.fa-eur:before {
+    content: ""
+}
+
+.fa-gbp:before {
+    content: ""
+}
+
+.fa-dollar:before,
+.fa-usd:before {
+    content: ""
+}
+
+.fa-rupee:before,
+.fa-inr:before {
+    content: ""
+}
+
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+    content: ""
+}
+
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+    content: ""
+}
+
+.fa-won:before,
+.fa-krw:before {
+    content: ""
+}
+
+.fa-bitcoin:before,
+.fa-btc:before {
+    content: ""
+}
+
+.fa-file:before {
+    content: ""
+}
+
+.fa-file-text:before {
+    content: ""
+}
+
+.fa-sort-alpha-asc:before {
+    content: ""
+}
+
+.fa-sort-alpha-desc:before {
+    content: ""
+}
+
+.fa-sort-amount-asc:before {
+    content: ""
+}
+
+.fa-sort-amount-desc:before {
+    content: ""
+}
+
+.fa-sort-numeric-asc:before {
+    content: ""
+}
+
+.fa-sort-numeric-desc:before {
+    content: ""
+}
+
+.fa-thumbs-up:before {
+    content: ""
+}
+
+.fa-thumbs-down:before {
+    content: ""
+}
+
+.fa-youtube-square:before {
+    content: ""
+}
+
+.fa-youtube:before {
+    content: ""
+}
+
+.fa-xing:before {
+    content: ""
+}
+
+.fa-xing-square:before {
+    content: ""
+}
+
+.fa-youtube-play:before {
+    content: ""
+}
+
+.fa-dropbox:before {
+    content: ""
+}
+
+.fa-stack-overflow:before {
+    content: ""
+}
+
+.fa-instagram:before {
+    content: ""
+}
+
+.fa-flickr:before {
+    content: ""
+}
+
+.fa-adn:before {
+    content: ""
+}
+
+.fa-bitbucket:before {
+    content: ""
+}
+
+.fa-bitbucket-square:before {
+    content: ""
+}
+
+.fa-tumblr:before {
+    content: ""
+}
+
+.fa-tumblr-square:before {
+    content: ""
+}
+
+.fa-long-arrow-down:before {
+    content: ""
+}
+
+.fa-long-arrow-up:before {
+    content: ""
+}
+
+.fa-long-arrow-left:before {
+    content: ""
+}
+
+.fa-long-arrow-right:before {
+    content: ""
+}
+
+.fa-apple:before {
+    content: ""
+}
+
+.fa-windows:before {
+    content: ""
+}
+
+.fa-android:before {
+    content: ""
+}
+
+.fa-linux:before {
+    content: ""
+}
+
+.fa-dribbble:before {
+    content: ""
+}
+
+.fa-skype:before {
+    content: ""
+}
+
+.fa-foursquare:before {
+    content: ""
+}
+
+.fa-trello:before {
+    content: ""
+}
+
+.fa-female:before {
+    content: ""
+}
+
+.fa-male:before {
+    content: ""
+}
+
+.fa-gittip:before,
+.fa-gratipay:before {
+    content: ""
+}
+
+.fa-sun-o:before {
+    content: ""
+}
+
+.fa-moon-o:before {
+    content: ""
+}
+
+.fa-archive:before {
+    content: ""
+}
+
+.fa-bug:before {
+    content: ""
+}
+
+.fa-vk:before {
+    content: ""
+}
+
+.fa-weibo:before {
+    content: ""
+}
+
+.fa-renren:before {
+    content: ""
+}
+
+.fa-pagelines:before {
+    content: ""
+}
+
+.fa-stack-exchange:before {
+    content: ""
+}
+
+.fa-arrow-circle-o-right:before {
+    content: ""
+}
+
+.fa-arrow-circle-o-left:before {
+    content: ""
+}
+
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+    content: ""
+}
+
+.fa-dot-circle-o:before {
+    content: ""
+}
+
+.fa-wheelchair:before {
+    content: ""
+}
+
+.fa-vimeo-square:before {
+    content: ""
+}
+
+.fa-turkish-lira:before,
+.fa-try:before {
+    content: ""
+}
+
+.fa-plus-square-o:before {
+    content: ""
+}
+
+.fa-space-shuttle:before {
+    content: ""
+}
+
+.fa-slack:before {
+    content: ""
+}
+
+.fa-envelope-square:before {
+    content: ""
+}
+
+.fa-wordpress:before {
+    content: ""
+}
+
+.fa-openid:before {
+    content: ""
+}
+
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before {
+    content: ""
+}
+
+.fa-mortar-board:before,
+.fa-graduation-cap:before {
+    content: ""
+}
+
+.fa-yahoo:before {
+    content: ""
+}
+
+.fa-google:before {
+    content: ""
+}
+
+.fa-reddit:before {
+    content: ""
+}
+
+.fa-reddit-square:before {
+    content: ""
+}
+
+.fa-stumbleupon-circle:before {
+    content: ""
+}
+
+.fa-stumbleupon:before {
+    content: ""
+}
+
+.fa-delicious:before {
+    content: ""
+}
+
+.fa-digg:before {
+    content: ""
+}
+
+.fa-pied-piper-pp:before {
+    content: ""
+}
+
+.fa-pied-piper-alt:before {
+    content: ""
+}
+
+.fa-drupal:before {
+    content: ""
+}
+
+.fa-joomla:before {
+    content: ""
+}
+
+.fa-language:before {
+    content: ""
+}
+
+.fa-fax:before {
+    content: ""
+}
+
+.fa-building:before {
+    content: ""
+}
+
+.fa-child:before {
+    content: ""
+}
+
+.fa-paw:before {
+    content: ""
+}
+
+.fa-spoon:before {
+    content: ""
+}
+
+.fa-cube:before {
+    content: ""
+}
+
+.fa-cubes:before {
+    content: ""
+}
+
+.fa-behance:before {
+    content: ""
+}
+
+.fa-behance-square:before {
+    content: ""
+}
+
+.fa-steam:before {
+    content: ""
+}
+
+.fa-steam-square:before {
+    content: ""
+}
+
+.fa-recycle:before {
+    content: ""
+}
+
+.fa-automobile:before,
+.fa-car:before {
+    content: ""
+}
+
+.fa-cab:before,
+.fa-taxi:before {
+    content: ""
+}
+
+.fa-tree:before {
+    content: ""
+}
+
+.fa-spotify:before {
+    content: ""
+}
+
+.fa-deviantart:before {
+    content: ""
+}
+
+.fa-soundcloud:before {
+    content: ""
+}
+
+.fa-database:before {
+    content: ""
+}
+
+.fa-file-pdf-o:before {
+    content: ""
+}
+
+.fa-file-word-o:before {
+    content: ""
+}
+
+.fa-file-excel-o:before {
+    content: ""
+}
+
+.fa-file-powerpoint-o:before {
+    content: ""
+}
+
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before {
+    content: ""
+}
+
+.fa-file-zip-o:before,
+.fa-file-archive-o:before {
+    content: ""
+}
+
+.fa-file-sound-o:before,
+.fa-file-audio-o:before {
+    content: ""
+}
+
+.fa-file-movie-o:before,
+.fa-file-video-o:before {
+    content: ""
+}
+
+.fa-file-code-o:before {
+    content: ""
+}
+
+.fa-vine:before {
+    content: ""
+}
+
+.fa-codepen:before {
+    content: ""
+}
+
+.fa-jsfiddle:before {
+    content: ""
+}
+
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before {
+    content: ""
+}
+
+.fa-circle-o-notch:before {
+    content: ""
+}
+
+.fa-ra:before,
+.fa-resistance:before,
+.fa-rebel:before {
+    content: ""
+}
+
+.fa-ge:before,
+.fa-empire:before {
+    content: ""
+}
+
+.fa-git-square:before {
+    content: ""
+}
+
+.fa-git:before {
+    content: ""
+}
+
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
+.fa-hacker-news:before {
+    content: ""
+}
+
+.fa-tencent-weibo:before {
+    content: ""
+}
+
+.fa-qq:before {
+    content: ""
+}
+
+.fa-wechat:before,
+.fa-weixin:before {
+    content: ""
+}
+
+.fa-send:before,
+.fa-paper-plane:before {
+    content: ""
+}
+
+.fa-send-o:before,
+.fa-paper-plane-o:before {
+    content: ""
+}
+
+.fa-history:before {
+    content: ""
+}
+
+.fa-circle-thin:before {
+    content: ""
+}
+
+.fa-header:before {
+    content: ""
+}
+
+.fa-paragraph:before {
+    content: ""
+}
+
+.fa-sliders:before {
+    content: ""
+}
+
+.fa-share-alt:before {
+    content: ""
+}
+
+.fa-share-alt-square:before {
+    content: ""
+}
+
+.fa-bomb:before {
+    content: ""
+}
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+    content: ""
+}
+
+.fa-tty:before {
+    content: ""
+}
+
+.fa-binoculars:before {
+    content: ""
+}
+
+.fa-plug:before {
+    content: ""
+}
+
+.fa-slideshare:before {
+    content: ""
+}
+
+.fa-twitch:before {
+    content: ""
+}
+
+.fa-yelp:before {
+    content: ""
+}
+
+.fa-newspaper-o:before {
+    content: ""
+}
+
+.fa-wifi:before {
+    content: ""
+}
+
+.fa-calculator:before {
+    content: ""
+}
+
+.fa-paypal:before {
+    content: ""
+}
+
+.fa-google-wallet:before {
+    content: ""
+}
+
+.fa-cc-visa:before {
+    content: ""
+}
+
+.fa-cc-mastercard:before {
+    content: ""
+}
+
+.fa-cc-discover:before {
+    content: ""
+}
+
+.fa-cc-amex:before {
+    content: ""
+}
+
+.fa-cc-paypal:before {
+    content: ""
+}
+
+.fa-cc-stripe:before {
+    content: ""
+}
+
+.fa-bell-slash:before {
+    content: ""
+}
+
+.fa-bell-slash-o:before {
+    content: ""
+}
+
+.fa-trash:before {
+    content: ""
+}
+
+.fa-copyright:before {
+    content: ""
+}
+
+.fa-at:before {
+    content: ""
+}
+
+.fa-eyedropper:before {
+    content: ""
+}
+
+.fa-paint-brush:before {
+    content: ""
+}
+
+.fa-birthday-cake:before {
+    content: ""
+}
+
+.fa-area-chart:before {
+    content: ""
+}
+
+.fa-pie-chart:before {
+    content: ""
+}
+
+.fa-line-chart:before {
+    content: ""
+}
+
+.fa-lastfm:before {
+    content: ""
+}
+
+.fa-lastfm-square:before {
+    content: ""
+}
+
+.fa-toggle-off:before {
+    content: ""
+}
+
+.fa-toggle-on:before {
+    content: ""
+}
+
+.fa-bicycle:before {
+    content: ""
+}
+
+.fa-bus:before {
+    content: ""
+}
+
+.fa-ioxhost:before {
+    content: ""
+}
+
+.fa-angellist:before {
+    content: ""
+}
+
+.fa-cc:before {
+    content: ""
+}
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+    content: ""
+}
+
+.fa-meanpath:before {
+    content: ""
+}
+
+.fa-buysellads:before {
+    content: ""
+}
+
+.fa-connectdevelop:before {
+    content: ""
+}
+
+.fa-dashcube:before {
+    content: ""
+}
+
+.fa-forumbee:before {
+    content: ""
+}
+
+.fa-leanpub:before {
+    content: ""
+}
+
+.fa-sellsy:before {
+    content: ""
+}
+
+.fa-shirtsinbulk:before {
+    content: ""
+}
+
+.fa-simplybuilt:before {
+    content: ""
+}
+
+.fa-skyatlas:before {
+    content: ""
+}
+
+.fa-cart-plus:before {
+    content: ""
+}
+
+.fa-cart-arrow-down:before {
+    content: ""
+}
+
+.fa-diamond:before {
+    content: ""
+}
+
+.fa-ship:before {
+    content: ""
+}
+
+.fa-user-secret:before {
+    content: ""
+}
+
+.fa-motorcycle:before {
+    content: ""
+}
+
+.fa-street-view:before {
+    content: ""
+}
+
+.fa-heartbeat:before {
+    content: ""
+}
+
+.fa-venus:before {
+    content: ""
+}
+
+.fa-mars:before {
+    content: ""
+}
+
+.fa-mercury:before {
+    content: ""
+}
+
+.fa-intersex:before,
+.fa-transgender:before {
+    content: ""
+}
+
+.fa-transgender-alt:before {
+    content: ""
+}
+
+.fa-venus-double:before {
+    content: ""
+}
+
+.fa-mars-double:before {
+    content: ""
+}
+
+.fa-venus-mars:before {
+    content: ""
+}
+
+.fa-mars-stroke:before {
+    content: ""
+}
+
+.fa-mars-stroke-v:before {
+    content: ""
+}
+
+.fa-mars-stroke-h:before {
+    content: ""
+}
+
+.fa-neuter:before {
+    content: ""
+}
+
+.fa-genderless:before {
+    content: ""
+}
+
+.fa-facebook-official:before {
+    content: ""
+}
+
+.fa-pinterest-p:before {
+    content: ""
+}
+
+.fa-whatsapp:before {
+    content: ""
+}
+
+.fa-server:before {
+    content: ""
+}
+
+.fa-user-plus:before {
+    content: ""
+}
+
+.fa-user-times:before {
+    content: ""
+}
+
+.fa-hotel:before,
+.fa-bed:before {
+    content: ""
+}
+
+.fa-viacoin:before {
+    content: ""
+}
+
+.fa-train:before {
+    content: ""
+}
+
+.fa-subway:before {
+    content: ""
+}
+
+.fa-medium:before {
+    content: ""
+}
+
+.fa-yc:before,
+.fa-y-combinator:before {
+    content: ""
+}
+
+.fa-optin-monster:before {
+    content: ""
+}
+
+.fa-opencart:before {
+    content: ""
+}
+
+.fa-expeditedssl:before {
+    content: ""
+}
+
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+    content: ""
+}
+
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+    content: ""
+}
+
+.fa-battery-2:before,
+.fa-battery-half:before {
+    content: ""
+}
+
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+    content: ""
+}
+
+.fa-battery-0:before,
+.fa-battery-empty:before {
+    content: ""
+}
+
+.fa-mouse-pointer:before {
+    content: ""
+}
+
+.fa-i-cursor:before {
+    content: ""
+}
+
+.fa-object-group:before {
+    content: ""
+}
+
+.fa-object-ungroup:before {
+    content: ""
+}
+
+.fa-sticky-note:before {
+    content: ""
+}
+
+.fa-sticky-note-o:before {
+    content: ""
+}
+
+.fa-cc-jcb:before {
+    content: ""
+}
+
+.fa-cc-diners-club:before {
+    content: ""
+}
+
+.fa-clone:before {
+    content: ""
+}
+
+.fa-balance-scale:before {
+    content: ""
+}
+
+.fa-hourglass-o:before {
+    content: ""
+}
+
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+    content: ""
+}
+
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+    content: ""
+}
+
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+    content: ""
+}
+
+.fa-hourglass:before {
+    content: ""
+}
+
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+    content: ""
+}
+
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+    content: ""
+}
+
+.fa-hand-scissors-o:before {
+    content: ""
+}
+
+.fa-hand-lizard-o:before {
+    content: ""
+}
+
+.fa-hand-spock-o:before {
+    content: ""
+}
+
+.fa-hand-pointer-o:before {
+    content: ""
+}
+
+.fa-hand-peace-o:before {
+    content: ""
+}
+
+.fa-trademark:before {
+    content: ""
+}
+
+.fa-registered:before {
+    content: ""
+}
+
+.fa-creative-commons:before {
+    content: ""
+}
+
+.fa-gg:before {
+    content: ""
+}
+
+.fa-gg-circle:before {
+    content: ""
+}
+
+.fa-tripadvisor:before {
+    content: ""
+}
+
+.fa-odnoklassniki:before {
+    content: ""
+}
+
+.fa-odnoklassniki-square:before {
+    content: ""
+}
+
+.fa-get-pocket:before {
+    content: ""
+}
+
+.fa-wikipedia-w:before {
+    content: ""
+}
+
+.fa-safari:before {
+    content: ""
+}
+
+.fa-chrome:before {
+    content: ""
+}
+
+.fa-firefox:before {
+    content: ""
+}
+
+.fa-opera:before {
+    content: ""
+}
+
+.fa-internet-explorer:before {
+    content: ""
+}
+
+.fa-tv:before,
+.fa-television:before {
+    content: ""
+}
+
+.fa-contao:before {
+    content: ""
+}
+
+.fa-500px:before {
+    content: ""
+}
+
+.fa-amazon:before {
+    content: ""
+}
+
+.fa-calendar-plus-o:before {
+    content: ""
+}
+
+.fa-calendar-minus-o:before {
+    content: ""
+}
+
+.fa-calendar-times-o:before {
+    content: ""
+}
+
+.fa-calendar-check-o:before {
+    content: ""
+}
+
+.fa-industry:before {
+    content: ""
+}
+
+.fa-map-pin:before {
+    content: ""
+}
+
+.fa-map-signs:before {
+    content: ""
+}
+
+.fa-map-o:before {
+    content: ""
+}
+
+.fa-map:before {
+    content: ""
+}
+
+.fa-commenting:before {
+    content: ""
+}
+
+.fa-commenting-o:before {
+    content: ""
+}
+
+.fa-houzz:before {
+    content: ""
+}
+
+.fa-vimeo:before {
+    content: ""
+}
+
+.fa-black-tie:before {
+    content: ""
+}
+
+.fa-fonticons:before {
+    content: ""
+}
+
+.fa-reddit-alien:before {
+    content: ""
+}
+
+.fa-edge:before {
+    content: ""
+}
+
+.fa-credit-card-alt:before {
+    content: ""
+}
+
+.fa-codiepie:before {
+    content: ""
+}
+
+.fa-modx:before {
+    content: ""
+}
+
+.fa-fort-awesome:before {
+    content: ""
+}
+
+.fa-usb:before {
+    content: ""
+}
+
+.fa-product-hunt:before {
+    content: ""
+}
+
+.fa-mixcloud:before {
+    content: ""
+}
+
+.fa-scribd:before {
+    content: ""
+}
+
+.fa-pause-circle:before {
+    content: ""
+}
+
+.fa-pause-circle-o:before {
+    content: ""
+}
+
+.fa-stop-circle:before {
+    content: ""
+}
+
+.fa-stop-circle-o:before {
+    content: ""
+}
+
+.fa-shopping-bag:before {
+    content: ""
+}
+
+.fa-shopping-basket:before {
+    content: ""
+}
+
+.fa-hashtag:before {
+    content: ""
+}
+
+.fa-bluetooth:before {
+    content: ""
+}
+
+.fa-bluetooth-b:before {
+    content: ""
+}
+
+.fa-percent:before {
+    content: ""
+}
+
+.fa-gitlab:before {
+    content: ""
+}
+
+.fa-wpbeginner:before {
+    content: ""
+}
+
+.fa-wpforms:before {
+    content: ""
+}
+
+.fa-envira:before {
+    content: ""
+}
+
+.fa-universal-access:before {
+    content: ""
+}
+
+.fa-wheelchair-alt:before {
+    content: ""
+}
+
+.fa-question-circle-o:before {
+    content: ""
+}
+
+.fa-blind:before {
+    content: ""
+}
+
+.fa-audio-description:before {
+    content: ""
+}
+
+.fa-volume-control-phone:before {
+    content: ""
+}
+
+.fa-braille:before {
+    content: ""
+}
+
+.fa-assistive-listening-systems:before {
+    content: ""
+}
+
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+    content: ""
+}
+
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+    content: ""
+}
+
+.fa-glide:before {
+    content: ""
+}
+
+.fa-glide-g:before {
+    content: ""
+}
+
+.fa-signing:before,
+.fa-sign-language:before {
+    content: ""
+}
+
+.fa-low-vision:before {
+    content: ""
+}
+
+.fa-viadeo:before {
+    content: ""
+}
+
+.fa-viadeo-square:before {
+    content: ""
+}
+
+.fa-snapchat:before {
+    content: ""
+}
+
+.fa-snapchat-ghost:before {
+    content: ""
+}
+
+.fa-snapchat-square:before {
+    content: ""
+}
+
+.fa-pied-piper:before {
+    content: ""
+}
+
+.fa-first-order:before {
+    content: ""
+}
+
+.fa-yoast:before {
+    content: ""
+}
+
+.fa-themeisle:before {
+    content: ""
+}
+
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+    content: ""
+}
+
+.fa-fa:before,
+.fa-font-awesome:before {
+    content: ""
+}
+
+.fa-handshake-o:before {
+    content: ""
+}
+
+.fa-envelope-open:before {
+    content: ""
+}
+
+.fa-envelope-open-o:before {
+    content: ""
+}
+
+.fa-linode:before {
+    content: ""
+}
+
+.fa-address-book:before {
+    content: ""
+}
+
+.fa-address-book-o:before {
+    content: ""
+}
+
+.fa-vcard:before,
+.fa-address-card:before {
+    content: ""
+}
+
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+    content: ""
+}
+
+.fa-user-circle:before {
+    content: ""
+}
+
+.fa-user-circle-o:before {
+    content: ""
+}
+
+.fa-user-o:before {
+    content: ""
+}
+
+.fa-id-badge:before {
+    content: ""
+}
+
+.fa-drivers-license:before,
+.fa-id-card:before {
+    content: ""
+}
+
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+    content: ""
+}
+
+.fa-quora:before {
+    content: ""
+}
+
+.fa-free-code-camp:before {
+    content: ""
+}
+
+.fa-telegram:before {
+    content: ""
+}
+
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+    content: ""
+}
+
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+    content: ""
+}
+
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+    content: ""
+}
+
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+    content: ""
+}
+
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+    content: ""
+}
+
+.fa-shower:before {
+    content: ""
+}
+
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+    content: ""
+}
+
+.fa-podcast:before {
+    content: ""
+}
+
+.fa-window-maximize:before {
+    content: ""
+}
+
+.fa-window-minimize:before {
+    content: ""
+}
+
+.fa-window-restore:before {
+    content: ""
+}
+
+.fa-times-rectangle:before,
+.fa-window-close:before {
+    content: ""
+}
+
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+    content: ""
+}
+
+.fa-bandcamp:before {
+    content: ""
+}
+
+.fa-grav:before {
+    content: ""
+}
+
+.fa-etsy:before {
+    content: ""
+}
+
+.fa-imdb:before {
+    content: ""
+}
+
+.fa-ravelry:before {
+    content: ""
+}
+
+.fa-eercast:before {
+    content: ""
+}
+
+.fa-microchip:before {
+    content: ""
+}
+
+.fa-snowflake-o:before {
+    content: ""
+}
+
+.fa-superpowers:before {
+    content: ""
+}
+
+.fa-wpexplorer:before {
+    content: ""
+}
+
+.fa-meetup:before {
+    content: ""
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto
+}
+
+html {
+    font-family: "Roboto Slab", serif;
+    font-size: 100%
+}
+
+a {
+    color: #34b6e4;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer
+}
+
+a:hover,
+a:focus {
+    color: #1585cf
+}
+
+a img {
+    border: 0
+}
+
+#header>.row {
+    height: 5.625rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.875rem;
+    padding-right: 2.5rem;
+    border-bottom: 0.25rem solid #dddddd;
+    width: 100%;
+    padding-bottom: 0.0625rem;
+    border-color: red;
+}
+
+#header .logo {
+    float: right;
+    height: 75px;
+    text-align: right
+}
+
+#content {
+    margin: 0 1.875rem
+}
+
+.panel-footer>.row {
+    margin: 0 1.875rem
+}
+
+.panel-footer .footer-items {
+    text-align: right
+}
+
+.no-pad {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.top-bar {
+    background: #eeeeee !important;
+    border-top: 1px solid #05538a;
+    border-bottom: 0.0625rem solid #05538a;
+    float: none !important
+}
+
+.italic {
+    font-style: italic
+}
+
+.inherit {
+    font-style: italic
+}
+
+.readmore .more {
+    visibility: hidden;
+    display: none
+}
+
+.readmore.expanded .more {
+    visibility: visible;
+    display: inline
+}
+
+.readmore.expanded .elipses {
+    visibility: hidden;
+    width: 0
+}
+
+.readmore .expander .fa {
+    font-size: 0.8em
+}
+
+.tabbing.navbar-default {
+    background-color: #ffffff;
+    border-color: #ffffff
+}
+
+.more-facets .btn {
+    padding-left: 20px;
+    color: #05538a
+}
+
+.more-facets .below-the-fold {
+    display: none
+}
+
+.tabbing.nav-pills>li>a {
+    margin-bottom: 0;
+    margin-left: -10px;
+    margin-right: 0;
+    background-color: #007eaf;
+    color: #ffffff;
+    border-radius: 0
+}
+
+.tabbing.nav-pills>li:first-child a {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px
+}
+
+.tabbing.nav-pills>li:last-child a {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px
+}
+
+.tabbing.nav-pills>li>a.active {
+    background-color: #05538a;
+    color: #ffffff
+}
+
+.tabbing-item li:first-child a {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px
+}
+
+.tabbing-item li:last-child a {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0
+}
+
+.tabbing.nav-pills>li>a.disabled-nav-pill:hover {
+    color: #333;
+    background-color: transparent;
+    cursor: default
+}
+
+.navbar-default {
+    background-color: #eeeeee;
+    border-color: #eeeeee
+}
+
+.navbar-default .navbar-brand {
+    color: #004f6f
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #05538a
+}
+
+.navbar-default .navbar-text {
+    color: #004f6f
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #004f6f;
+    font-size: 1.0rem !important
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #05538a;
+    text-decoration: underline
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #05538a;
+    background-color: #eeeeee;
+    text-decoration: underline
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: #05538a;
+    background-color: #eeeeee;
+    text-decoration: underline
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #eeeeee
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #eeeeee
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #004f6f
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #004f6f
+}
+
+.navbar-default .navbar-link {
+    color: #004f6f;
+    font-size: 1.0rem !important
+}
+
+.navbar-default .navbar-link:hover {
+    color: #05538a;
+    text-decoration: underline
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #004f6f
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #05538a;
+        text-decoration: underline
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: #05538a;
+        background-color: #eeeeee;
+        text-decoration: underline
+    }
+}
+
+#welcome {
+    padding-left: 3.75rem;
+    padding-right: 8.125rem;
+    padding-top: 1.875rem
+}
+
+#welcome .row {
+    width: 100%
+}
+
+#welcome .row .small-12 {
+    border: 1px solid #cccccc
+}
+
+#container {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem
+}
+
+#container .row {
+    width: 100%
+}
+
+#main-content.small-8 {
+    padding-right: 1.25rem
+}
+
+#main-content.accessions,
+#main-content.objects {
+    padding: 0 1em
+}
+
+#sidebar {
+    border: 1px solid #cccccc;
+    padding: 0.625rem
+}
+
+#whats-in-container {
+    margin-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    margin-bottom: 0.625rem;
+    border: 1px solid #cccccc
+}
+
+#whats-in-container>h3 {
+    margin-top: 0px;
+    margin-left: -1.25rem;
+    background-color: #eeeeee;
+    color: #007eaf;
+    border-bottom: 1px solid #05538a;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 0.625rem
+}
+
+.badge-and-identifier .identifier {
+    margin-left: 0.625rem;
+    padding: 0.25rem
+}
+
+#lead_graph {
+    padding: 1.25rem;
+    font-size: 1.0rem
+}
+
+.record-container {
+    margin-top: 1.25rem
+}
+
+.record-container.concepts-layout>.row {
+    margin-left: 0
+}
+
+.record-container.with-border {
+    padding: 1.25rem;
+    border: 1px solid #cccccc
+}
+
+.record-header {
+    word-wrap: break-word
+}
+
+.record-toolbar ul {
+    display: table;
+    width: 100%
+}
+
+.record-toolbar li {
+    display: table-cell;
+    width: 25%;
+    text-align: center
+}
+
+.record-toolbar li a {
+    padding: 0 !important
+}
+
+.record-toolbar i {
+    font-size: 2.0rem
+}
+
+.identifier {
+    float: left
+}
+
+.identifier .id-label {
+    float: left;
+    font-family: "Roboto Slab", serif;
+    font-weight: bold
+}
+
+.dates-is-single-date {
+    list-style-type: none;
+    padding: 0
+}
+
+.record-image {
+    float: right;
+    padding: 1.25rem;
+    background-color: #cccccc;
+    text-align: center
+}
+
+.record-image p {
+    margin-top: 1rem;
+    margin-bottom: 0
+}
+
+.record-image .image-container {
+    width: 18.75rem;
+    height: 17.5rem;
+    overflow: hidden
+}
+
+.record-image .image-container img {
+    max-width: 100%;
+    height: auto
+}
+
+.row.context-row {
+    margin-top: 0.625rem;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    padding-left: 0.625rem
+}
+
+.recordrow {
+    padding: 0.625rem;
+    border: 1px solid #cccccc;
+    margin-bottom: 0.625rem
+}
+
+.recordrow.featured {
+    background-color: #eeeeee
+}
+
+.recordrow h3 {
+    color: #00171f;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.recordrow .recordsummary {
+    clear: both
+}
+
+#embedded-search-container .recordrow:first-child {
+    margin-top: 0.625rem
+}
+
+a {
+    color: #007eaf
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+h1,
+.h1 {
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #34b6e4
+}
+
+h1 {
+    font-size: 1.5rem
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.375rem
+    }
+}
+
+h2 {
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #05538a
+}
+
+h3 {
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007eaf
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-family: "Roboto Slab", serif
+}
+
+h5 {
+    font-weight: bold
+}
+
+.valign-middle {
+    display: table
+}
+
+.valign-middle>.columns {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.valign-middle>.columns,
+.valign-middle>[class*="column"]+[class*="column"]:last-child {
+    float: none
+}
+
+.spacer {
+    padding-top: 3em
+}
+
+.first-row {
+    margin-top: 1em
+}
+
+.search_row * .form-control {
+    margin-right: .3rem
+}
+
+.search_row .fill-column {
+    width: 100%
+}
+
+.searchterm,
+.keywordscontext li em {
+    font-weight: bold;
+    padding: 0 0.2em;
+    background-color: #d5f7e9
+}
+
+.searchterm {
+    background-color: #f7d309
+}
+
+#submit_search {
+    width: 100%
+}
+
+.searchstatement {
+    background-color: #eeeeee
+}
+
+.facets h2 {
+    font-size: 2em
+}
+
+.facets h3 {
+    font-size: 1.2em;
+    border-bottom: 1px solid
+}
+
+.facets h4 {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+.facets p {
+    font-size: 0.9em
+}
+
+.facets li {
+    width: 100%;
+    border-bottom: 1px solid
+}
+
+ul.no-bullets {
+    list-style-type: none
+}
+
+.facet-group {
+    list-style-type: none !important;
+    margin-left: 0
+}
+
+.facet-group li {
+    border-top: 1px solid #cccccc
+}
+
+.facet-group li:last-child {
+    border-bottom: 1px solid #cccccc
+}
+
+.facet-group li>a {
+    margin-left: 0.625rem
+}
+
+.facet-group li>.recordnumber {
+    float: right;
+    color: #007eaf
+}
+
+.recordnumber {
+    padding: 0 5px;
+    font-weight: bold
+}
+
+.definition {
+    font-size: 0.7em;
+    float: right
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto
+}
+
+.result_context {
+    padding-top: 1em
+}
+
+.result_context strong {
+    padding-right: 0.5em
+}
+
+.recordtype {
+    margin-top: -0.75em
+}
+
+.object {
+    color: #e01919
+}
+
+.collection,
+.resource {
+    color: #e01919
+}
+
+button.subject {
+    color: #fe8534
+}
+
+.agent {
+    color: #3b52ff
+}
+
+.person {
+    color: #3b52ff
+}
+
+.record {
+    color: #14af26
+}
+
+.classification {
+    color: #7608b5
+}
+
+.page_action {
+    color: #00171f;
+    text-decoration: none;
+    line-height: inherit;
+    cursor: pointer;
+    border: 1px solid #eeeeee
+}
+
+.page_action:hover,
+.page_action:focus {
+    color: #05538a;
+    background-color: #eeeeee
+}
+
+.top_container {
+    color: #14af26
+}
+
+.folder {
+    color: #009fcf
+}
+
+.recordtype.repository {
+    color: #7608b5
+}
+
+.recordtype.classification {
+    color: #015189
+}
+
+.digitized {
+    float: right;
+    text-align: center;
+    color: #999
+}
+
+.grid-item {
+    text-align: center
+}
+
+.smallnote {
+    color: #999;
+    font-style: italic
+}
+
+.subnote {
+    margin-top: 10px;
+    padding-left: 5px
+}
+
+.note_outline ul {
+    list-style: disc
+}
+
+.note_orderedlist .enumeration-arabic ol {
+    list-style: decimal
+}
+
+.note_orderedlist .enumeration-loweralpha ol {
+    list-style: lower-alpha
+}
+
+.note_orderedlist .enumeration-lowerroman ol {
+    list-style: lower-roman
+}
+
+.note_orderedlist .enumeration-null ol {
+    list-style: disc
+}
+
+.note_orderedlist .enumeration-upperalpha ol {
+    list-style: upper-alpha
+}
+
+.note_orderedlist .enumeration-upperroman ol {
+    list-style: upper-roman
+}
+
+.recordrow .classification-subgroups {
+    margin-top: 5px
+}
+
+.recordrow .classification-subgroups .classification-subgroups-tree.largetree-container {
+    max-height: 200px;
+    overflow: auto
+}
+
+.repository-logo {
+    float: right
+}
+
+.repository-logo img {
+    max-width: 400px;
+    max-height: 120px
+}
+
+.recordrow .repository-logo img {
+    max-width: 200px;
+    max-height: 60px
+}
+
+.tree li {
+    margin-left: -2rem;
+    padding-bottom: .5rem;
+    display: block
+}
+
+.contentsarrangement ul {
+    margin-left: 2em
+}
+
+.recordchildren li i.fi-plus,
+.recordchildren li i.fi-minus {
+    margin-left: -2em
+}
+
+.recordchildren li .treeitemdesc {
+    color: #999;
+    font-style: italic;
+    margin-left: 0.5em
+}
+
+.contentsarrangement li.panel {
+    margin-left: -1.25em;
+    margin-bottom: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em
+}
+
+.panel-footer {
+    margin-top: 2em
+}
+
+i.small {
+    font-size: 1.2em
+}
+
+i.medium {
+    font-size: 3em;
+    line-height: 0em
+}
+
+i.large {
+    font-size: 5em
+}
+
+i.giant {
+    font-size: 8em;
+    line-height: 0em
+}
+
+.attention {
+    color: green
+}
+
+.objectimage {
+    width: 50%;
+    float: right;
+    margin: 0 0 1em 1em
+}
+
+.objectimage img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%
+}
+
+.objectimage button[type="submit"] {
+    width: 100%;
+    white-space: normal
+}
+
+span.component {
+    font-weight: bold
+}
+
+span.title {
+    font-style: italic;
+    font-variant: small-caps
+}
+
+span.required {
+    font-variant: small-caps;
+    color: #8a6d3b
+}
+
+.keywordscontext .content {
+    padding-left: 1.25rem;
+    display: none
+}
+
+.inline-label {
+    font-weight: bold;
+    font-family: "Roboto Slab", serif
+}
+
+.clear {
+    clear: both
+}
+
+span.head {
+    display: block;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif
+}
+
+.breadcrumb>li+li:before {
+    color: #00171f;
+    content: "\007C\00a0"
+}
+
+.breadcrumb * a {
+    color: #05538a
+}
+
+.breadcrumb li br {
+    display: none
+}
+
+.panel .breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0
+}
+
+.acc_holder {
+    margin-top: 1.25rem
+}
+
+#main .acc_button {
+    margin-bottom: 0.5rem
+}
+
+#sidebar .acc_button {
+    display: none
+}
+
+#sidebar .present_list {
+    padding-left: 10px
+}
+
+#sidebar form {
+    max-width: 85%;
+    margin: 0 auto
+}
+
+#sidebar .year_from {
+    padding: 0;
+    padding-right: 0.2rem
+}
+
+#sidebar .year_to {
+    padding: 0;
+    padding-left: 0.2rem
+}
+
+.filter_more form {
+    max-width: 90%;
+    margin: 0 auto
+}
+
+.filter_more .year_from {
+    padding: 0;
+    padding-right: 0.2rem
+}
+
+.filter_more .year_to {
+    padding: 0;
+    padding-left: 0.2rem
+}
+
+.sorter {
+    margin-top: 20px
+}
+
+@media (min-width: 992px) {
+    #sidebar.resizable-sidebar {
+        position: relative;
+        padding-left: 12px
+    }
+    #sidebar.resizable-sidebar .resizable-sidebar-handle {
+        background-color: #EEE;
+        position: absolute;
+        height: 100%;
+        width: 8px;
+        top: 0;
+        left: 0;
+        cursor: ew-resize;
+        background-image: url(/assets/sidebar_drag_handle-bd38afc381508ff1559c7e39ff30118da188ed3ba99eb071cb8047dbc791ce19.png);
+        background-repeat: no-repeat;
+        background-position: 1px center;
+        border-right: 1px solid #CCC
+    }
+}
+
+@media (max-width: 991px) {
+    .row.has-resizable-content>.col-sm-9,
+    .row.has-resizable-content>.resizable-sidebar {
+        width: inherit !important
+    }
+}
+
+.skipnav a:focus {
+    position: absolute
+}
+
+.record-type-badge {
+    padding: 0.25rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: bold
+}
+
+.record-type-badge i {
+    margin-right: 0.125rem
+}
+
+.badge-and-identifier .record-type-badge {
+    float: left
+}
+
+.record-type-badge.resource {
+    color: #e01919;
+    border-color: #e01919
+}
+
+.record-type-badge.archival_object {
+    color: #457141;
+    border-color: #457141
+}
+
+.record-type-badge.agent {
+    color: #3b52ff;
+    border-color: #3b52ff
+}
+
+.record-type-badge.accession {
+    color: #e01919;
+    border-color: #e01919
+}
+
+.record-type-badge.classification {
+    color: #015189;
+    border-color: #015189
+}
+
+.record-type-badge.digital_object {
+    color: #e01919;
+    border-color: #e01919
+}
+
+.record-type-badge.repository {
+    color: #7608b5;
+    border-color: #7608b5
+}
+
+.record-type-badge.subject {
+    color: #fe8534;
+    border-color: #fe8534
+}
+
+.infinite-record-wrapper {
+    height: 600px;
+    overflow: hidden
+}
+
+.infinite-record-container {
+    width: 100%;
+    overflow: hidden;
+    will-change: transform
+}
+
+.infinite-record-container .waypoint {
+    height: 1em
+}
+
+.infinite-record-container .waypoint.populated {
+    height: auto
+}
+
+.infinite-record-scrollbar {
+    overflow: scroll;
+    position: absolute;
+    width: 15px
+}
+
+.infinite-tree-view {
+    height: 600px;
+    padding: 1em
+}
+
+.infinite-tree-view .resource-level,
+.infinite-tree-view .resource-type,
+.infinite-tree-view .resource-container {
+    display: none
+}
+
+@media (max-width: 991px) {
+    .infinite-tree-sidebar {
+        display: none
+    }
+}
+
+.infinite-record-record {
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 19px, #EEE 20px)
+}
+
+.infinite-item {
+    background-color: #FFF
+}
+
+.infinite-item.infinite-item-indent-2 {
+    margin-left: 20px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-3 {
+    margin-left: 40px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-4 {
+    margin-left: 60px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-5 {
+    margin-left: 80px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-6 {
+    margin-left: 100px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-7 {
+    margin-left: 120px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-8 {
+    margin-left: 140px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-9 {
+    margin-left: 160px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-10 {
+    margin-left: 180px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-11 {
+    margin-left: 200px;
+    padding-left: 20px
+}
+
+.infinite-item.infinite-item-indent-12 {
+    margin-left: 220px;
+    padding-left: 20px
+}
+
+.infinite-item h3 {
+    margin-top: 0
+}
+
+.infinite-item dl.dl-horizontal {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-bottom: 10px
+}
+
+.infinite-item dl.dl-horizontal dt {
+    text-align: left;
+    padding-left: 3px;
+    white-space: normal;
+    margin-bottom: 5px;
+    line-height: 1.2em
+}
+
+.infinite-item dl.dl-horizontal dd {
+    line-height: 1.2em
+}
+
+.waypoint:last-child .infinite-record-record:last-child:after {
+    content: '';
+    border-bottom: 5px solid #CCC;
+    width: 90%;
+    left: 5%;
+    display: block;
+    padding-top: 40px;
+    background: #FFF;
+    position: absolute
+}
+
+.largetree-container {
+    background-color: #EEE;
+    margin-bottom: 1em;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 1px
+}
+
+.largetree-container .reparented-highlight .title {
+    background-color: #93d093;
+    transition: all 0.5s linear
+}
+
+.largetree-container .reparented .title {
+    background-color: auto;
+    transition: all 1.5s linear
+}
+
+.largetree-container button.expandme {
+    background: none;
+    border: 0
+}
+
+.largetree-container .waypoint {
+    height: 0;
+    display: table-row
+}
+
+.largetree-container li {
+    padding: 0;
+    margin: 0.5em 0
+}
+
+.largetree-container .waypoint.populated {
+    display: none
+}
+
+.largetree-container .root {
+    width: 100%
+}
+
+.largetree-container table {
+    table-layout: fixed
+}
+
+.largetree-container tr.multiselected-row {
+    outline: 1px solid #0A6AA1
+}
+
+.largetree-container tr.multiselected-row td {
+    background-color: #b6def5
+}
+
+.largetree-container td.drag-handle,
+.largetree-container td.no-drag-handle {
+    display: none
+}
+
+.largetree-container.drag-enabled td.drag-handle,
+.largetree-container.drag-enabled td.no-drag-handle {
+    display: table-cell
+}
+
+.largetree-container.drag-enabled td.no-drag-handle {
+    width: 2em
+}
+
+.largetree-container.drag-enabled td.drag-handle {
+    width: 2em;
+    background-image: url(/archivesspace/tree_drag_handle.gif);
+    background-repeat: no-repeat;
+    background-position: 4px 50%;
+    cursor: move
+}
+
+.largetree-container.drag-enabled td.drag-handle.drag-disabled {
+    visibility: hidden
+}
+
+.largetree-container.drag-enabled td.drag-handle.multiselected {
+    width: 2em;
+    background-color: #0A6AA1
+}
+
+.largetree-container td.resource-level {
+    width: 8%
+}
+
+.largetree-container td.resource-type {
+    width: 18%
+}
+
+.largetree-container td.resource-container {
+    width: 28%
+}
+
+.largetree-container td.digital-object-type {
+    width: 12%
+}
+
+.largetree-container td.file-uri-summary {
+    width: 28%
+}
+
+.largetree-container td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    height: 2em;
+    line-height: 2em
+}
+
+.largetree-container .expandme:focus {
+    border: 0;
+    outline-style: none
+}
+
+.largetree-container .expandme-icon.expanded {
+    transform: rotate(90deg);
+    transition: transform 100ms ease-out
+}
+
+.largetree-container tr.current {
+    outline: 1px solid #0A6AA1
+}
+
+.largetree-container tr.current td {
+    background-color: #EFFAFF
+}
+
+.largetree-container .indentor {
+    display: inline-block;
+    height: inherit;
+    text-align: right;
+    background-color: #F1F1F1;
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 23px, #fff 24px)
+}
+
+.largetree-container table.root tbody tr:nth-of-type(odd) {
+    background-color: #FAFAFA
+}
+
+.largetree-container table.root tbody tr:first-child {
+    background-color: #F1F1F1
+}
+
+.largetree-container table.root tbody tr:first-child td.title {
+    padding-left: 6px
+}
+
+.largetree-container .indent-level-0 .indentor {
+    width: 24px
+}
+
+.largetree-container .indent-level-1 .indentor {
+    width: 24px
+}
+
+.largetree-container .indent-level-2 .indentor {
+    width: 48px
+}
+
+.largetree-container .indent-level-3 .indentor {
+    width: 72px
+}
+
+.largetree-container .indent-level-4 .indentor {
+    width: 96px
+}
+
+.largetree-container .indent-level-5 .indentor {
+    width: 120px
+}
+
+.largetree-container .indent-level-6 .indentor {
+    width: 144px
+}
+
+.largetree-container .indent-level-7 .indentor {
+    width: 168px
+}
+
+.largetree-container .indent-level-8 .indentor {
+    width: 192px
+}
+
+.largetree-container .indent-level-9 .indentor {
+    width: 216px
+}
+
+.largetree-container .indent-level-10 .indentor {
+    width: 240px
+}
+
+.largetree-container .indent-level-11 .indentor {
+    width: 264px
+}
+
+.largetree-container .indent-level-12 .indentor {
+    width: 288px
+}
+
+.largetree-container .indent-level-13 .indentor {
+    width: 312px
+}
+
+.largetree-container .indent-level-14 .indentor {
+    width: 336px
+}
+
+.largetree-container .indent-level-15 .indentor {
+    width: 360px
+}
+
+.largetree-container .indent-level-16 .indentor {
+    width: 384px
+}
+
+.largetree-container tr#new .indentor,
+.largetree-container tr#new .new-title {
+    float: left
+}
+
+.largetree-container tr#new .new-title {
+    margin-left: 4px;
+    line-height: 2em
+}
+
+.largetree-container tr#new .indentor .glyphicon {
+    line-height: 2em;
+    margin-right: 4px;
+    color: #4cae4c
+}
+
+.largetree-container tr.cut td {
+    background-color: #CCC;
+    box-shadow: inset 0 1px 2px #999
+}
+
+.largetree-progress-indicator {
+    width: 100%;
+    height: 5px;
+    display: block;
+    visibility: hidden
+}
+
+.ui-resizable-handle.ui-resizable-s {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 8px;
+    background-color: #EEE;
+    background-image: url(/archivesspace/drag_handle.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #D9D9D9;
+    cursor: ns-resize
+}
+
+.ui-resizable-handle.ui-resizable-s:hover {
+    background-color: #e9e9e9
+}
+
+.ui-resizable-handle.ui-resizable-s .tree-resize-toggle {
+    font-family: 'Glyphicons Halflings';
+    position: absolute;
+    font-size: 8px;
+    right: 0;
+    top: 0px;
+    padding: 0 20px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    line-height: 8px;
+    color: #888
+}
+
+.ui-resizable-handle.ui-resizable-s .tree-resize-toggle:before {
+    content: '\e114'
+}
+
+.ui-resizable-handle.ui-resizable-s .tree-resize-toggle:hover {
+    text-decoration: none
+}
+
+.ui-resizable-handle.ui-resizable-s.maximized .tree-resize-toggle:before {
+    content: '\e113'
+}
+
+.ui-resizable-resizing .ui-resizable-handle.ui-resizable-s {
+    background-color: #e9e9e9
+}
+
+.tree-drag-indicator {
+    position: fixed;
+    display: inline-block;
+    z-index: 1000;
+    background-color: white;
+    padding: 5px;
+    border: solid black 1px
+}
+
+.tree-drag-indicator ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 1.5em
+}
+
+.largetree-container.drag-enabled tr.drag-drop-over {
+    outline: 1px solid #028482
+}
+
+.largetree-container.drag-enabled tr.drag-drop-over td {
+    background-color: #F0FFF0
+}
+
+.largetree-container.drag-enabled tr.drag-drop-over-disallowed {
+    outline: 1px solid #c82829
+}
+
+.largetree-container.drag-enabled tr.drag-drop-over-disallowed td {
+    background-color: #FFF0F0
+}
+
+.largetree-container.drag-enabled .drag-annotation {
+    float: right;
+    width: 12px;
+    text-align: center;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 2px;
+    font-size: 0.8em;
+    color: #FFF
+}
+
+.tree-scroll-hotspot {
+    position: absolute;
+    opacity: 0;
+    z-index: 900
+}
+
+#object_container .blockout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 100
+}
+
+.largetree-blockout {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    top: 0;
+    left: 0
+}
+
+#tree-toolbar {
+    padding: 4px 5px 4px 0;
+    background-image: linear-gradient(to bottom, #f3f3f3 0%, #ededed 100%);
+    margin: 0;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #DFDFDF
+}
+
+#tree-toolbar .tree-transfer-form form {
+    margin: 0
+}
+
+#tree-toolbar .tree-transfer-form fieldset {
+    width: 300px;
+    padding: 10px
+}
+
+#tree-toolbar .tree-transfer-form .form-actions {
+    margin: 0
+}
+
+.emph.render-none {
+    font-style: italic
+}
+
+.emph.render-bold,
+.emph.render-bolddoublequote,
+.emph.render-bolditalic,
+.emph.render-boldsinglequote,
+.emph.render-boldsmcaps,
+.emph.render-boldunderline {
+    font-weight: bold
+}
+
+.emph.render-italic,
+.emph.render-bolditalic {
+    font-style: italic
+}
+
+.emph.render-smcaps,
+.emph.render-boldsmcaps {
+    font-variant: small-caps
+}
+
+.emph.render-sub {
+    vertical-align: sub;
+    font-size: 80%
+}
+
+.emph.render-super {
+    vertical-align: super;
+    font-size: 80%
+}
+
+.emph.render-underline {
+    text-decoration: underline
+}
+
+.emph.render-nonproport {
+    color: #666
+}
+
+.emph.render-doublequote:before,
+.emph.render-bolddoublequote:before {
+    content: '"'
+}
+
+.emph.render-doublequote:after,
+.emph.render-bolddoublequote:after {
+    content: '"'
+}
+
+.emph.render-singlequote:before,
+.emph.render-boldsinglequote:before {
+    content: "'"
+}
+
+.emph.render-singlequote:after,
+.emph.render-boldsinglequote:after {
+    content: "'"
+}

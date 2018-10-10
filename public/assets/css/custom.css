@@ -1,0 +1,69 @@
+#header>.row {
+    border-color: #6d1b6d;
+}
+
+h1 {
+    color: #6d1b6d;
+}
+
+h2 {
+    color: #5B165B;
+}
+
+h3 {
+    color: #400640;
+}
+
+.top-bar {
+    background: #FFFFFF !important;
+    border-top: 1px solid #6d1b6d;
+    border-bottom: 0.0625rem solid #6d1b6d;
+    float: none !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #6d1b6d;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:active {
+    color: #6d1b6d;
+    text-decoration: none !important;
+    opacity: .75;
+}
+
+a {
+    color: #903090;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #903090 !important;
+    text-decoration: none !important;
+    opacity: .75;
+}
+
+.panel-footer {
+    background-color: #FFFFFF;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #6d1b6d;
+    border-color: #6d1b6d;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #6d1b6d !important;
+    border-color: #6d1b6d !important;
+    opacity: .75;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #6d1b6d;
+}
