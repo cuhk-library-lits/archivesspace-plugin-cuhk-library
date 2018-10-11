@@ -76,6 +76,39 @@ a:focus {
     max-width: 400px;
 }
 
+.arousel-control {}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-bottom: 0px;
+}
+
+.carousel-indicators li {
+    background-color: #999999;
+    opacity: 0.5;
+    border: 0px;
+    border-radius: 0px;
+    width: 15px;
+    height: 5px;
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.carousel-indicators .active {
+    background-color: #6d1b6d;
+    opacity: 1;
+    border: 0px;
+    border-radius: 0px;
+    width: 15px;
+    height: 5px;
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 @media screen and (max-width: 1120px) {
     .search .form-inline {
         width: 100%;
