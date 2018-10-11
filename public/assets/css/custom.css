@@ -76,6 +76,12 @@ a:focus {
     max-width: 400px;
 }
 
+@media screen and (max-width: 1120px) {
+    .search .form-inline {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 1440px) {
     .welcome-content {
         width: 100%;
