@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-9 welcome-content">
     <h2><%= t('brand.welcome_head') %></h2>
     <div><%= t('brand.welcome_message').html_safe %></div>
     <%= render partial: 'shared/search', locals: {
@@ -21,7 +21,7 @@
     } %>
     <div><%= t('brand.welcome_search_tips').html_safe %></div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3 welcome-carousel">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">

@@ -67,3 +67,7 @@ a:focus {
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #6d1b6d;
 }
+
+.search {
+    margin-bottom: 10px;
+}
