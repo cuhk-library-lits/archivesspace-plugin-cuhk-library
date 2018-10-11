@@ -72,7 +72,7 @@ a:focus {
     margin-bottom: 20px;
 }
 
-.welcome-carousel {
+.carousel {
     max-width: 400px;
 }
 
@@ -87,6 +87,10 @@ a:focus {
         width: 100%;
     }
     .welcome-carousel {
+        width: 100%;
+    }
+    .carousel {
+        margin: 0 auto;
         width: 400px;
     }
 }
