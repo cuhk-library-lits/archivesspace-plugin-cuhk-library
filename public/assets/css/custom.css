@@ -69,5 +69,18 @@ a:focus {
 }
 
 .search {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.welcome-carousel {
+    max-width: 400px;
+}
+
+@media screen and (max-width: 1440px) {
+    .welcome-content {
+        width: 100%;
+    }
+    .welcome-carousel {
+        width: 400px;
+    }
 }
