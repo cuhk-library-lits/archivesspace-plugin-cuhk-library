@@ -109,6 +109,10 @@ a:focus {
     margin-right: 5px;
 }
 
+.readmore.expanded .more {
+    display: block;
+}
+
 @media screen and (max-width: 1120px) {
     .search .form-inline {
         width: 100%;
