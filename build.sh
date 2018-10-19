@@ -16,6 +16,7 @@ if [[ "$1" == "dev" ]]
 then
     OUTFILE_NAME="$PLUGIN_NAME-$VERSION-dev.zip"
     DEV_STASH_NAME=`git stash create`
+    echo $DEV_STASH_NAME
     git archive $DEV_STASH_NAME -o deployables/$OUTFILE_NAME
 else
     OUTFILE_NAME="$PLUGIN_NAME-$VERSION.zip"
