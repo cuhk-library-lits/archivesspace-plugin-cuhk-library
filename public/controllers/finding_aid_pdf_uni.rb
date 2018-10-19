@@ -98,11 +98,12 @@ class FindingAidPDFUni
 
     renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
 
-    if AppConfig.has_key?(:oai_sets)
+    if AppConfig.has_key?(:pui_pdf_additional_fonts)
       additional_fonts = AppConfig[:pui_pdf_additional_fonts]
       unless additional_fonts.nil?
         additional_fonts.each do |font|
-          renderer.getFontResolver().addFont(font["path"], font["encoding"], font["embedded"])
+          puts font
+          renderer.getFontResolver().addFont(font[:path], font[:encoding], font[:embedded])
         end
       end
     end
