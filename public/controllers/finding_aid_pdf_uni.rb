@@ -108,7 +108,6 @@ class FindingAidPDFUni
       end
     end
 
-    #renderer.getFontResolver().addFont("ARIALUNI.TTF", "Identity-H", false)
     renderer.set_document(java.io.File.new(out_html.path))
 
     # FIXME: We'll need to test this with a reverse proxy in front of it.
