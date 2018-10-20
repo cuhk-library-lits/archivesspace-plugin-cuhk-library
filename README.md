@@ -1,1 +1,1 @@
-# archivesspace-plugin-cuhk-library-theme
+# archivesspace-plugin-cuhk-library

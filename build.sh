@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLUGIN_NAME="cuhk-library-theme"
+PLUGIN_NAME="cuhk-library"
 VERSION="v2.0.0"
 
 ASPACE_ROOT="/d/bin/archivesspace"
