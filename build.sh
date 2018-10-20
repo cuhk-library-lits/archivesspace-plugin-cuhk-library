@@ -12,6 +12,7 @@ function ctrl_c() {
 }
 
 echo "Deploying..."
+mkdir -p deployables
 if [[ "$1" == "dev" ]]
 then
     OUTFILE_NAME="$PLUGIN_NAME-$VERSION-dev.zip"
