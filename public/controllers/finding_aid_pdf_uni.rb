@@ -7,6 +7,12 @@ class FindingAidPDFUni
 
   attr_reader :repo_id, :resource_id, :archivesspace, :base_url, :repo_code
 
+  PLUGIN_LIB_PATH = File.expand_path("..", File.dirname(__FILE__)).to_s + "/lib"
+  Dir.foreach(PLUGIN_LIB_PATH) do |lib_file|
+    next if lib_file == '.' or lib_file == '..'
+    $CLASSPATH << PLUGIN_LIB_PATH + "/" + lib_file
+  end
+
   def initialize(repo_id, resource_id, archivesspace_client, base_url)
     @repo_id = repo_id
     @resource_id = resource_id
@@ -96,27 +102,22 @@ class FindingAidPDFUni
     pdf_file = Tempfile.new
     pdf_file.close
 
-    renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
-
+    puts $CLASSPATH
+    converterProperties = com.itextpdf.html2pdf.ConverterProperties.new
+    fontProvider = com.itextpdf.html2pdf.resolver.font.DefaultFontProvider.new(false, false, false)
     if AppConfig.has_key?(:pui_pdf_additional_fonts)
       additional_fonts = AppConfig[:pui_pdf_additional_fonts]
       unless additional_fonts.nil?
         additional_fonts.each do |font|
-          puts font
-          renderer.getFontResolver().addFont(font[:path], font[:encoding], font[:embedded])
+          fontProgram = com.itextpdf.io.font.FontProgramFactory.createFont(font[:path])
+          fontProvider.addFont(fontProgram)
         end
       end
     end
-
-    renderer.set_document(java.io.File.new(out_html.path))
-
-    # FIXME: We'll need to test this with a reverse proxy in front of it.
-    renderer.shared_context.base_url = base_url
-
-    renderer.layout
+    converterProperties.setFontProvider(fontProvider)
 
     pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
-    renderer.create_pdf(pdf_output_stream)
+    com.itextpdf.html2pdf.HtmlConverter.convertToPdf(java.io.FileInputStream.new(java.io.File.new(out_html.path)), pdf_output_stream, converterProperties)
     pdf_output_stream.close
 
     out_html.unlink
