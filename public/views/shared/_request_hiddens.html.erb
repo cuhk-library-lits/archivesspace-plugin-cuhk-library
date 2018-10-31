@@ -1,0 +1,20 @@
+<%# yield all the "hidden" fields for a request, so it can be used in two placed %>
+ <% unless @back_url.blank? %>
+ <input type='hidden' name='back_url' value='<%= @back_url %>' />
+ <% end %>
+
+<% @request.each_pair do |attr, value| %>
+  <% next if value.nil? %>
+    <% if value.kind_of? Array %>
+      <% value.each do |v| %>
+      <input type='hidden' name='<%= "#{attr.to_s}[]" %>' value='<%= v %>' />
+    <% end %>
+  <% else %>
+    <%# Fix request_uri prefix issue %>
+    <% if attr.to_s.eql? 'request_uri' and !value.to_s.eql? "#{app_prefix(@request[:request_uri])}" %>
+        <input type='hidden' name='<%= attr.to_s %>' value='<%= "#{app_prefix(@request[:request_uri])}" %>' />
+    <% else %>
+        <input type='hidden' name='<%= attr.to_s %>' value='<%= value %>' />
+    <% end %>
+  <% end %>
+<% end %>
