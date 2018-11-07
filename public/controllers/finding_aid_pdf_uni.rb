@@ -7,7 +7,7 @@ class FindingAidPDFUni
 
   attr_reader :repo_id, :resource_id, :archivesspace, :base_url, :repo_code
 
-  PLUGIN_LIB_PATH = File.expand_path("..", File.dirname(__FILE__)).to_s + "/lib"
+  PLUGIN_LIB_PATH = File.expand_path("../..", File.dirname(__FILE__)).to_s + "/common/lib"
   Dir.foreach(PLUGIN_LIB_PATH) do |lib_file|
     next if lib_file == '.' or lib_file == '..'
     $CLASSPATH << PLUGIN_LIB_PATH + "/" + lib_file
@@ -102,14 +102,14 @@ class FindingAidPDFUni
     pdf_file = Tempfile.new
     pdf_file.close
 
-    puts $CLASSPATH
     converterProperties = com.itextpdf.html2pdf.ConverterProperties.new
     fontProvider = com.itextpdf.html2pdf.resolver.font.DefaultFontProvider.new(false, false, false)
     if AppConfig.has_key?(:pui_pdf_additional_fonts)
       additional_fonts = AppConfig[:pui_pdf_additional_fonts]
       unless additional_fonts.nil?
         additional_fonts.each do |font|
-          fontProgram = com.itextpdf.io.font.FontProgramFactory.createFont(font[:path])
+          font_path = File.expand_path("../..", File.dirname(__FILE__)).to_s + '/' + font
+          fontProgram = com.itextpdf.io.font.FontProgramFactory.createFont(font_path)
           fontProvider.addFont(fontProgram)
         end
       end
