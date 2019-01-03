@@ -1,0 +1,84 @@
+<script src="https://www.google.com/recaptcha/api.js?render=<%= AppConfig[:recaptcha_site_key] %>"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#request_failed_message').hide();
+  $('#request_form').on('submit', function (e) {
+    var req_form = this;
+
+    e.preventDefault();
+    $('.modal-footer #request_btn').prop("disabled", true);	
+
+    grecaptcha.execute('<%= AppConfig[:recaptcha_site_key] %>', { action: '<%= AppConfig[:request_form_action] %>' }).then(function (token) {
+      if (token) {
+        $('#request_form input[name="g_recaptcha_response"]').val(token);
+        req_form.submit();
+      } else {
+        console.error("reCAPTCHA token empty");
+        $('#request_failed_message').show();
+      }
+    }, function (reason) {
+      console.error("reCAPTCHA failed! Reason:" + reason);
+      $('#request_failed_message').show();
+    });
+  });
+});
+</script>
+
+<%= form_tag(app_prefix("cuhk_lib_fill_request"), method: 'post', :id => 'request_form') do %>
+  <%= render partial: 'shared/request_hiddens' %>
+  <input type='hidden' name='g_recaptcha_response' />
+  <div id="request_failed_message" class="request-failed-message"><%= t('request.failed').html_safe %></div>
+  <div id="request">
+    <div class="form-group required">
+      <%= label_tag(:user_name, "#{t('request.user_name')} #{t('request.required')}" ,  :class => 'sr-only') %>
+      <div class="input-group">
+        <%= text_field_tag :user_name, nil, :placeholder => t('request.user_name'), :class => "form-control"%>
+        <div class="input-group-addon">
+          <span class="required aria-hidden"><%= t('request.required') %></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group required">
+      <%= label_tag(:user_email, "#{t('request.user_email')} #{t('request.required')}",  :class => 'sr-only') %>
+      <div class="input-group">
+        <%= text_field_tag :user_email, nil, :type => 'email', :placeholder => t('request.user_email'), :class => 'form-control' %>
+        <div class="input-group-addon">
+          <span class="required aria-hidden"><%= t('request.required') %></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group required">
+      <%= label_tag(:user_type, "#{t('request.user_type')} #{t('request.required')}" ,  :class => 'sr-only') %>
+      <div class="input-group">
+        <%= select_tag 'user_type', options_for_select([ 
+            "Undergraduate Student", "Postgraduate Student", "Teaching Staff", "Administrative Staff", "Alumnus", "JULAC", "Others"
+          ], "Undergraduate Student"), :class => 'form-control'%>
+        <div class="input-group-addon">
+          <span class="required aria-hidden"><%= t('request.required') %></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:library_id, t('request.library_id'), :class => 'sr-only') %>
+      <%= text_field_tag :library_id, nil, :placeholder => t('request.library_id'), :class => "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:date, t('request.date'),  :class => 'sr-only') %>
+      <%= text_field_tag :date, nil, :placeholder => t('request.date'), :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:note, t('request.note'),  :class => 'sr-only') %>
+      <%= text_area_tag :note, nil, :rows=> "3", :cols => "25", :placeholder => t('request.note'), :class => 'form-control' %>
+    </div>
+    <div class="form-group honeypot">
+      <%= label_tag :comment %>
+      <%= text_field_tag :comment, nil, tabindex: '-1', :class => 'form-control'%>
+    </div>
+    <button type="submit" class="btn btn-primary action-btn noscript"><%= t('request.submit') %></button>
+  </div>
+  <div class="recaptcha-branding">
+    This site is protected by reCAPTCHA and the Google
+    <a target="recaptcha_policy" href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a target="recaptcha_tos" href="https://policies.google.com/terms">Terms of Service</a> apply.
+  </div>
+<% end %>

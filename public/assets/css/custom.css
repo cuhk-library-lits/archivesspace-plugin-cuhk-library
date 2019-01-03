@@ -76,8 +76,6 @@ a:focus {
     max-width: 400px;
 }
 
-.arousel-control {}
-
 .carousel-indicators {
     position: absolute;
     bottom: 10px;
@@ -109,8 +107,26 @@ a:focus {
     margin-right: 5px;
 }
 
+.request-failed-message {
+    color: #FF0000;
+    margin: 5px 0px 10px 0px;
+    font-weight: bold;
+}
+
 .readmore.expanded .more {
     display: block;
+}
+
+.grecaptcha-badge {
+    top: 0px !important;
+    visibility: hidden !important;
+}
+
+.recaptcha-branding {
+    color: #AAAAAA;
+    font-size: 0.8em;
+    margin: 0px;
+    margin-left: 5px;
 }
 
 @media screen and (max-width: 1120px) {
