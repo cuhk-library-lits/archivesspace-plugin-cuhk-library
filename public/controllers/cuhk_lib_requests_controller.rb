@@ -5,8 +5,10 @@ class CuhkLibRequestsController < ApplicationController
 
     errs = []
 
-    if !GoogleRecaptcha.verify?(AppConfig[:recaptcha_secret_key], request[:g_recaptcha_response], AppConfig[:request_form_action])
-      errs << I18n.t('request.recaptcha_failed').html_safe
+    if AppConfig.has_key?(:enable_recaptcha) && AppConfig[:enable_recaptcha]
+      if !GoogleRecaptcha.verify?(AppConfig[:recaptcha_secret_key], request[:g_recaptcha_response], AppConfig[:request_form_action])
+        errs << I18n.t('request.recaptcha_failed').html_safe
+      end
     end
 
     if errs.blank?

@@ -1,33 +1,38 @@
-<script src="https://www.google.com/recaptcha/api.js?render=<%= AppConfig[:recaptcha_site_key] %>"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#request_failed_message').hide();
-  $('#request_form').on('submit', function (e) {
-    var req_form = this;
+<% if AppConfig.has_key?(:enable_recaptcha) && AppConfig[:enable_recaptcha] %>
+  <script src="https://www.google.com/recaptcha/api.js?render=<%= AppConfig[:recaptcha_site_key] %>"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#request_failed_message').hide();
+    $('#request_form').on('submit', function (e) {
+      var req_form = this;
 
-    e.preventDefault();
-    $('.modal-footer #request_btn').prop("disabled", true);	
+      e.preventDefault();
+      $('.modal-footer #request_btn').prop("disabled", true);	
 
-    grecaptcha.execute('<%= AppConfig[:recaptcha_site_key] %>', { action: '<%= AppConfig[:request_form_action] %>' }).then(function (token) {
-      if (token) {
-        $('#request_form input[name="g_recaptcha_response"]').val(token);
-        req_form.submit();
-      } else {
-        console.error("reCAPTCHA token empty");
+      grecaptcha.execute('<%= AppConfig[:recaptcha_site_key] %>', { action: '<%= AppConfig[:request_form_action] %>' }).then(function (token) {
+        if (token) {
+          $('#request_form input[name="g_recaptcha_response"]').val(token);
+          req_form.submit();
+        } else {
+          console.error("reCAPTCHA token empty");
+          $('#request_failed_message').show();
+        }
+      }, function (reason) {
+        console.error("reCAPTCHA failed! Reason:" + reason);
         $('#request_failed_message').show();
-      }
-    }, function (reason) {
-      console.error("reCAPTCHA failed! Reason:" + reason);
-      $('#request_failed_message').show();
+      });
     });
   });
-});
-</script>
+  </script>
+<% end %>
 
 <%= form_tag(app_prefix("cuhk_lib_fill_request"), method: 'post', :id => 'request_form') do %>
   <%= render partial: 'shared/request_hiddens' %>
-  <input type='hidden' name='g_recaptcha_response' />
-  <div id="request_failed_message" class="request-failed-message"><%= t('request.failed').html_safe %></div>
+  <% if AppConfig.has_key?(:enable_recaptcha) && AppConfig[:enable_recaptcha] %>
+    <input type='hidden' name='g_recaptcha_response' />
+    <div id="request_failed_message" class="request-failed-message"><%= t('request.failed').html_safe %></div>
+  <% end %>
+  
   <div id="request">
     <div class="form-group required">
       <%= label_tag(:user_name, "#{t('request.user_name')} #{t('request.required')}" ,  :class => 'sr-only') %>
@@ -76,9 +81,11 @@ $(document).ready(function(){
     </div>
     <button type="submit" class="btn btn-primary action-btn noscript"><%= t('request.submit') %></button>
   </div>
-  <div class="recaptcha-branding">
-    This site is protected by reCAPTCHA and the Google
-    <a target="recaptcha_policy" href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a target="recaptcha_tos" href="https://policies.google.com/terms">Terms of Service</a> apply.
-  </div>
+  <% if AppConfig.has_key?(:enable_recaptcha) && AppConfig[:enable_recaptcha] %>
+    <div class="recaptcha-branding">
+      This site is protected by reCAPTCHA and the Google
+      <a target="recaptcha_policy" href="https://policies.google.com/privacy">Privacy Policy</a> and
+      <a target="recaptcha_tos" href="https://policies.google.com/terms">Terms of Service</a> apply.
+    </div>
+  <% end %>
 <% end %>
