@@ -1,7 +1,8 @@
 en:
   brand:
     title: CUHK Library Archival Collections
-    title_link_text: Return to CUHK Library Archival Collections
+    cuhk: The Chinese University of Hong Kong
+    cuhk_library: The Chinese University of Hong Kong Library
     home: Home
     welcome_head: CUHK Library Archival Collections
     welcome_page_title: CUHK Library Archival Collections
@@ -40,6 +41,8 @@ en:
     carousel_item02: Chinese literature
     carousel_item03: Oracle bones
     carousel_item04: Poetry manuscripts
+  actions:
+    print: Finding Aid
   request:
     user_type: User type
     library_id: Library ID
@@ -47,3 +50,5 @@ en:
         user_type: Please select your user type
     failed: Request failed. Please use the <a target="cuhk_lib_spc_request" href="http://www.lib.cuhk.edu.hk/en/collections/spc/form">Special Collections Request Form</a> instead.
     recaptcha_failed: Robot verification failed. Please use the <a target="cuhk_lib_spc_request" href="http://www.lib.cuhk.edu.hk/en/collections/spc/form">Special Collections Request Form</a> instead.
+  search_sorting:
+    title_unicode_sort: Title

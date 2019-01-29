@@ -14,6 +14,25 @@ h3 {
     color: #400640;
 }
 
+.site-banner {
+    margin: 20px 0px 0px 0px;
+    min-width: 360px;
+}
+
+.banner-link {
+    text-decoration: none;
+    opacity: 1.0;
+}
+
+.banner-link:hover {
+    text-decoration: none;
+    opacity: 1.0;
+}
+
+.banner-link .small-logo {
+    display: none;
+}
+
 .top-bar {
     background: #FFFFFF !important;
     border-top: 1px solid #6d1b6d;
@@ -113,8 +132,39 @@ a:focus {
     font-weight: bold;
 }
 
+button.page_action .fa {
+    padding-bottom: 3px;
+}
+
+.pdf-badge {
+    position: relative;
+}
+
+.pdf-badge:after {
+    font-family: Helvetica, Arial, sans-serif;
+    content: 'pdf';
+    font-size: 0.25em;
+    font-weight: bold;
+    line-height: 1em;
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    height: 1.3em;
+    width: 3em;
+    border: 0em;
+    border-radius: 0.65em;
+    padding: 1px 3px 1px 3px;
+    color: #FFFFFF;
+    background:#00171f;
+    text-align:center;
+}
+
 .readmore.expanded .more {
     display: block;
+}
+
+.readmore.expanded span.more {
+    display: inline;
 }
 
 .grecaptcha-badge {
@@ -127,6 +177,21 @@ a:focus {
     font-size: 0.8em;
     margin: 0px;
     margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #header > .row {
+        height: 5rem;
+    }
+    .banner-link .cuhk-logo {
+        width: 55px;
+    }
+    .banner-link .small-logo {
+        display: inline;
+    }
+    .banner-link .large-logo {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1120px) {
