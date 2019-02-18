@@ -1,0 +1,17 @@
+.statistics-report-page {
+    width: 1200px;
+    height: 825px;
+    margin: auto;
+    overflow-y: hidden;
+}
+.report-remarks::before {
+    content: "* ";
+}
+.report-remarks {
+    content: "* ";
+    font-size: 0.8em;
+    color: #6d1b6d;
+}
+.icon-highlight {
+    color: #0068bc;
+}

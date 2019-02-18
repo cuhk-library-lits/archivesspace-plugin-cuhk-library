@@ -1,0 +1,6 @@
+en:
+  plugins:
+    statistics:
+      title: Usage Statistics
+      label: Statistics
+      remarks: To download report as PDF, please right click on the report and select "Download page as PDF".
