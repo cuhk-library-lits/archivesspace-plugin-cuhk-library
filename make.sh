@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PLUGIN_NAME="cuhk-library"
-VERSION="v2.0.0"
+VERSION="v2.5.3"
 
 ASPACE_ROOT="/d/bin/archivesspace"
 PLUGIN_DIR="$ASPACE_ROOT/plugins"
@@ -15,20 +15,15 @@ echo "Deploying..."
 mkdir -p deployables
 if [ ! -z "$1" ]
 then
-    if [[ "$1" == "dev" ]]
-    then
-        OUTFILE_NAME="$PLUGIN_NAME-$VERSION-dev.zip"
-        DEV_STASH_NAME=`git stash create`
-        echo $DEV_STASH_NAME
-        git archive $DEV_STASH_NAME -o deployables/$OUTFILE_NAME
-    elif [[ "$1" == "prod" ]]
+    OUTFILE_NAME="$PLUGIN_NAME-$VERSION-$1.zip"
+    if [[ "$1" == "prod" ]]
     then
         OUTFILE_NAME="$PLUGIN_NAME-$VERSION.zip"
-        git archive HEAD -o deployables/$OUTFILE_NAME
     fi
+    tar czf deployables/$OUTFILE_NAME --exclude "deployables" --exclude ".git*" --exclude "make.sh" *
     rm -rf $PLUGIN_DIR/$PLUGIN_NAME
     mkdir $PLUGIN_DIR/$PLUGIN_NAME
-    unzip deployables/$OUTFILE_NAME -d $PLUGIN_DIR/$PLUGIN_NAME
+    tar xzf deployables/$OUTFILE_NAME --directory $PLUGIN_DIR/$PLUGIN_NAME
 fi
 
 echo "Starting server..."
