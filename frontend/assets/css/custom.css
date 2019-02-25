@@ -12,6 +12,11 @@
     font-size: 0.8em;
     color: #6d1b6d;
 }
+.statistics-bar {
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 .icon-highlight {
     color: #0068bc;
 }
