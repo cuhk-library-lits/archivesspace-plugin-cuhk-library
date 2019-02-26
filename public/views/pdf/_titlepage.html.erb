@@ -1,6 +1,10 @@
 <div class="title-page">
     <div class="logo">
-        <%= image_tag( record.resolved_repository['image_url'] || asset_path("archivesspace.small.png")) %>
+        <% if AppConfig[:pui_finding_aid_banner] %>
+            <%= image_tag( AppConfig[:public_proxy_url] + AppConfig[:pui_finding_aid_banner] ) %>
+        <% elsif record.resolved_repository['image_url'] %>
+            <%= image_tag( record.resolved_repository['image_url'] ) %>
+        <% end %>
     </div>
     <div class="title-block">
     <% if record.finding_aid['title'] %>
