@@ -1,6 +1,44 @@
 require Rails.root.join('app', 'controllers', 'concerns', 'manipulate_node')
 
 module ManipulateNodeFix
+    def process_mixed_content(in_txt, opts = {})
+        return if !in_txt
+
+        # Don't fire up nokogiri if there's no mixed content to parse
+        needs_nokogiri = in_txt.include?("<")
+
+        txt = in_txt.strip.encode(
+            Encoding.find('utf-8'), { invalid: :replace, undef: :replace, replace: '' }
+        )
+
+        txt = txt.gsub("chronlist>", "ul>").gsub("chronitem>", "li>")
+        txt = txt.gsub("list>", "ul>").gsub("item>", "li>")
+
+        unless opts[:preserve_newlines]
+            txt = txt.gsub(/\n\n/,"<br /><br />").gsub(/\r\n\r\n/,"<br /><br />")
+        end
+
+        txt = txt.gsub(/ & /, ' &amp; ')
+        txt = txt.gsub("xlink\:type=\"simple\"", "")
+
+        unless needs_nokogiri
+            return txt
+        end
+
+        # Escape & inside href to make it XML safe
+        @html_frag = Nokogiri::HTML.fragment(txt) # Special characters are escaped during HTML fragmenting
+        txt = @html_frag.to_xml(encoding: 'utf-8')
+
+        @frag = Nokogiri::XML.fragment(txt)
+        move_list_heads
+        @frag.traverse { |el|
+            # we don't do anything at the top level of the fragment or if it's text
+            node_check(el) if el.parent && !el.text?
+            el.content = el.text.gsub("\"", "&quot;") if el.text?
+        }
+        # replace the inline quotes with &quot;
+        @frag.to_xml(encoding: 'utf-8').to_s.gsub("&amp;quot;", "&quot;")
+    end
 
     def node_check(el)
         newnode = el.clone
