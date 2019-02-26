@@ -18,7 +18,7 @@ then
     OUTFILE_NAME="$PLUGIN_NAME-$VERSION-$1.tar.gz"
     if [[ "$1" == "prod" ]]
     then
-        OUTFILE_NAME="$PLUGIN_NAME-$VERSION..tar.gz"
+        OUTFILE_NAME="$PLUGIN_NAME-$VERSION.tar.gz"
     fi
     tar czf deployables/$OUTFILE_NAME --exclude "deployables" --exclude ".git*" --exclude "make.sh" *
     rm -rf $PLUGIN_DIR/$PLUGIN_NAME
