@@ -180,6 +180,22 @@ button.page_action .fa {
     margin-left: 5px;
 }
 
+.subnote .b {
+    font-weight: bold;
+}
+
+.subnote .i {
+    font-style: italic;
+}
+
+.subnote .u {
+    text-decoration: underline;
+}
+
+.subnote .s {
+    text-decoration: line-through;
+}
+
 @media screen and (max-width: 768px) {
     #header > .row {
         height: 5rem;
