@@ -302,7 +302,7 @@
         <filter class="solr.LowerCaseFilterFactory" />
       </analyzer>
     </fieldType>
-    <fieldType name="sort_unicode_string" class="solr.ICUCollationField" locale="zh_HK" strength="secondary" alternate="shifted" />
+    <fieldType name="sort_unicode_string" class="solr.ICUCollationField" locale="zh_HK" strength="secondary" />
   </types>
   <!-- Copy fields ... perhaps for sort fields -->
   <copyField source="subjects" dest="subjects_text"/>
