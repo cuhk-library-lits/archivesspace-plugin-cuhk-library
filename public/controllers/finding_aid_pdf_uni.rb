@@ -97,6 +97,11 @@ class FindingAidPDFUni
   def generate
     out_html = source_file
 
+    html_content = File.read(out_html.path).gsub(/&(?!amp;)(?!quot;)(?!apos;)(?!lt;)(?!gt;)(?!amp;)/, "&amp;")
+    File.open(out_html.path, 'w') do |out|
+      out << html_content
+    end
+
     XMLCleaner.new.clean(out_html.path)
 
     pdf_file = Tempfile.new
