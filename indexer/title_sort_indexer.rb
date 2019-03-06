@@ -6,7 +6,7 @@ class IndexerCommon
                 title_sort = doc['title'].gsub(/<[^>]+>/, '')
                 title_sort.gsub!(/-/, ' ')
                 title_sort.gsub!(/[^\p{Word}\s]/, '')
-                title_sort.strip
+                title_sort = title_sort.strip
 
                 if title_sort[0].force_encoding("UTF-8").ascii_only?
                     title_sort = "0" + title_sort
