@@ -1,21 +1,94 @@
-<h1>Thank you for your request</h1>
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+    h1 {
+      font-family: Calibri, Arial, sans-serif;
+      text-decoration: underline;
+      font-size: 16pt;
+    }
+    h2 {
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 14pt;
+    }
+    p {
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 12pt;
+    }
+    table {
+      font-family: Calibri, Arial, sans-serif;
+      border-collapse: collapse;
+      width: 800px;
+    }
+    th {
+      border: 1px solid #006EB2;
+      padding: 5px;
+      text-align: left;
+      vertical-align: top;
+      width: 20%;
+      background-color: #00B8E7;
+      color: #000;
+    }
+    td {
+      border: 1px solid #006EB2;
+      padding: 5px;
+      text-align: left;
+      vertical-align: top;
+      background-color: #fff;
+      width: 80%
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Thank you for your request</h1>
 
-<div class="request">
-  <h2>Record Requested</h2>
-  <strong>Title</strong>: <%= @request.title %><br>
-  <% url = "#{AppConfig[:public_proxy_url].sub(/\/^/, '')}#{@request.request_uri}" %>
-  <strong>URL</strong>: <%= link_to url, url %>
-</div>
+    <p>
+      <div class="request">
+        <h2>Record Requested</h2>
+        <% url = "#{AppConfig[:public_proxy_url].sub(/\/^/, '')}#{@request.request_uri}" %>
+        <table>
+          <tr>
+            <th>Title</th>
+            <td><%= @request.title %></td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td><%= link_to url, url %></td>
+          </tr>
+        </table>
+      </div>
+    </p>
 
-<div class="user">
-  <h2>Your Details</h2>
-  <strong>Name: </strong> <%= @request.user_name %><br>
-  <strong>Email: </strong> <a href="mailto:<%= @request.user_email %>"><%= @request.user_email %></a><br/>
-  <strong>User type: </strong> <%= @request.user_type %><br>
-  <strong>Library ID: </strong> <%= @request.library_id %><br>
-  <strong>Anticipated arrival date: </strong> <%= @request.date %><br>
-  <strong>Notes to the staff: </strong>
-  <div>
-    <%= (@request.note || "").gsub(/[\n\r]/,"<br>\n").html_safe %>
-  </div>
-</div>
+    <p>
+      <div class="user">
+        <h2>Your Details</h2>
+        <table>
+            <tr>
+              <th>Name</th>
+              <td><%= @request.user_name %></td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td><a href="mailto:<%= @request.user_email %>"><%= @request.user_email %></a></td>
+            </tr>
+            <tr>
+              <th>User type</th>
+              <td><%= @request.user_type %></td>
+            </tr>
+            <tr>
+              <th>Library ID</th>
+              <td><%= @request.library_id %></td>
+            </tr>
+            <tr>
+              <th>Anticipated arrival date</th>
+              <td><%= @request.date %></td>
+            </tr>
+            <tr>
+              <th>Please specify your requested items</th>
+              <td><%= (sanitize (@request.note || "")).gsub(/[\n\r]/,"<br>\n").html_safe %></td>
+            </tr>
+          </table>
+      </div>
+    </p>
+  </body>
+</html>

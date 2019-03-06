@@ -1,6 +1,6 @@
 class CuhkLibRequestMailer < ApplicationMailer
 
-  self.view_paths = File.expand_path("../views", __dir__) 
+  self.view_paths = File.expand_path("../views", __dir__)
 
   def request_received_email(request)
     user_email = request.user_email
