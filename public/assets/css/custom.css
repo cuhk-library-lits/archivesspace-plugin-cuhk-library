@@ -47,9 +47,27 @@ h3 {
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:active {
-    color: #6d1b6d;
+    color: #6d1b6d !important;
     text-decoration: none !important;
     opacity: .75;
+}
+
+.nav-pills > li {
+    margin-left: 0px !important;
+}
+.nav-pills>li a {
+    margin-left: 0px !important;
+}
+.nav-pills li:nth-child(3n+1) a {
+    background-color: #05538a !important;
+}
+
+.nav-pills li:nth-child(3n+2) a {
+    background-color: #538a05 !important;
+}
+
+.nav-pills li:nth-child(3n+3) a {
+    background-color: #ca9435 !important;
 }
 
 a {
@@ -59,7 +77,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #903090 !important;
+    color: #903090;
     text-decoration: none !important;
     opacity: .75;
 }
