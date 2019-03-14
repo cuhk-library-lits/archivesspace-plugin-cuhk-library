@@ -1,0 +1,16 @@
+<% 
+@sys_status_file = File.join(AppConfig[:data_directory], "sys_status")
+if File.file?(@sys_status_file)
+    @sys_status = JSON.parse(File.read(@sys_status_file))
+end
+
+css_class = { 'success_message'=>'alert-success', 'warning_message'=>'alert-warning', 'error_message'=>'alert-danger', 'info_message'=>'alert-info' }
+%>
+<% unless @sys_status.nil? %>
+    <% @sys_status.each do |message_type, message_text| %>
+        <% next if message_text.nil? || message_text.strip.empty? %>
+        <div class="alert <%= css_class[message_type] %>">
+            <%= sanitize message_text.force_encoding("UTF-8").html_safe %>
+        </div>
+    <% end %>
+<% end %>
