@@ -43,6 +43,7 @@ en:
     carousel_item04: Poetry manuscripts
   actions:
     print: Finding Aid
+    search_in: Search this Collection
   request:
     user_type: User type
     library_id: Library ID
@@ -66,7 +67,5 @@ en:
     barcode: Barcode
     location_url: Location URL
     location_title: Location title
-  actions:
-    search_in: Search this Collection
   search_sorting:
     title_unicode_sort: Title
