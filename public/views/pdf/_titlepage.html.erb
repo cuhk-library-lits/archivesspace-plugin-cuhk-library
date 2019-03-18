@@ -1,6 +1,6 @@
 <div class="title-page">
     <div class="logo">
-        <% if AppConfig[:pui_finding_aid_banner] %>
+        <% if AppConfig.has_key?(:pui_finding_aid_banner) && AppConfig[:pui_finding_aid_banner] %>
             <%= image_tag( AppConfig[:public_proxy_url] + AppConfig[:pui_finding_aid_banner] ) %>
         <% elsif record.resolved_repository['image_url'] %>
             <%= image_tag( record.resolved_repository['image_url'] ) %>
