@@ -1,15 +1,10 @@
 class SystemStatusController < ApplicationController
 
-  skip_before_action :unauthorised_access
+  set_access_control  "view_repository" => [:index, :create]
 
+  @@mutex ||= Mutex.new
   SYS_STATUS_FILE = File.join(AppConfig[:data_directory], "sys_status")
-
-  before_filter :init_controller
-
-  def init_controller
-    @mutex ||= Mutex.new
-  end
-
+  
   def sys_status_params
     params.require(:sys_status).permit( :success_message, :warning_message, :error_message, :info_message)
   end
@@ -33,7 +28,7 @@ class SystemStatusController < ApplicationController
 
   def create
     @sys_status = sys_status_params
-    @mutex.synchronize do
+    @@mutex.synchronize do
         begin
             file = File.new(SYS_STATUS_FILE, 'w')
             file.write(@sys_status.to_json)
