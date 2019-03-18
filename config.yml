@@ -1,1 +1,3 @@
-system_menu_controller: system_status
+system_menu_controller:
+  - system_status
+  - force_reindex
