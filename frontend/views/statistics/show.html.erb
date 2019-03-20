@@ -7,8 +7,8 @@
             <%= I18n.t("plugins.statistics.remarks") %>
         </p>
         <div class="report-pane">
-            <% if @repository && @repository.repository['repo_code'] && AppConfig[:repos_statistics] && AppConfig[:repos_statistics][@repository.repository['repo_code']] %>
-                <% AppConfig[:repos_statistics][@repository.repository['repo_code']][:urls].each do |url| %>
+            <% if @repository && @repository.repository['uri'] && AppConfig[:repos_statistics] && AppConfig[:repos_statistics][@repository.repository['uri']] %>
+                <% AppConfig[:repos_statistics][@repository.repository['uri']][:urls].each do |url| %>
                     <div class="statistics-report-page">
                         <iframe width="1200px" height="850px" src="<%= url %>" frameborder="0" style="border:0">
                         </iframe>

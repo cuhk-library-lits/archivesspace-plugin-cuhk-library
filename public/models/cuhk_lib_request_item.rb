@@ -1,8 +1,58 @@
 
 require 'active_model'
+require 'repositories_controller'
 
 class CuhkLibRequestItem < RequestItem
   attr_accessor :user_type, :library_id
+
+  def RequestItem.allow_for_type(repository_code, record_type)
+    
+    # Get repository uri from repository code (breaks MVC but repository_code is not static and can be changed)
+    repo_uri = nil
+    unless repository_code.nil? && repository_code.blank?
+      ctrl = RepositoriesController.new
+      repos_data = ctrl.archivesspace.search("(title:\"#{repository_code}\" AND publish:true)")
+      if !repos_data['results'].blank?
+        repo = ASUtils.json_parse(repos_data['results'][0]['json'])
+        repo_uri = repo['uri']
+      end
+    end
+
+    fallback = AppConfig[:pui_requests_permitted_for_types].include?(record_type)
+    allowed_repo_types = AppConfig[:pui_repos].dig(repo_uri, :requests_permitted_for_types) if repo_uri
+
+    if allowed_repo_types
+      allowed_repo_types.include?(record_type)
+    else
+      fallback
+    end
+  end
+
+  def RequestItem.allow_nontops(repo_code)
+    allow = nil
+    rep_allow = nil
+
+    # Get repository uri from repository code (breaks MVC but repository_code is not static and can be changed)
+    repo_uri = nil
+    unless repo_code.nil? && repo_code.blank?
+      ctrl = RepositoriesController.new
+      repos_data = ctrl.archivesspace.search("(title:\"#{repo_code}\" AND publish:true)")
+      if !repos_data['results'].blank?
+        repo = ASUtils.json_parse(repos_data['results'][0]['json'])
+        repo_uri = repo['uri']
+      end
+    end
+
+    begin
+      rep_allow  = AppConfig[:pui_repos].dig(repo_uri,:requests_permitted_for_containers_only) if repo_uri
+      allow = !rep_allow unless rep_allow.nil?
+    rescue Exception => err
+      raise err unless err.message.start_with?("No value set for config parameter")
+    end
+    allow = !AppConfig[:pui_requests_permitted_for_containers_only] if allow.nil?
+    Rails.logger.debug("allow? #{ allow}")
+    allow
+  end
 
   def initialize(hash)
     self.members.each do |sym|
