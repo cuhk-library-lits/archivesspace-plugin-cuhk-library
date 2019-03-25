@@ -3,11 +3,11 @@
     <div class="col-sm-12">
       <div class="site-banner">
         <a href="http://www.cuhk.edu.hk/" target="_new" class="banner-link">
-          <%= image_tag "#{@base_url}/assets/images/cuhk.png", :alt => I18n.t("brand.cuhk"), :class => "cuhk-logo" %>
+          <%= image_tag AppConfig[:public_proxy_url] + "/assets/images/cuhk.png", :alt => I18n.t("brand.cuhk"), :class => "cuhk-logo" %>
         </a>
         <a href="http://www.lib.cuhk.edu.hk/en" target="_new" class="banner-link">
-          <%= image_tag "#{@base_url}/assets/images/cuhk_library.png", :alt => I18n.t("brand.cuhk_library"), :class => "large-logo" %>
-          <%= image_tag "#{@base_url}/assets/images/cuhk_library_small.png", :alt => I18n.t("brand.cuhk_library"), :class => "small-logo" %>
+          <%= image_tag AppConfig[:public_proxy_url] + "/assets/images/cuhk_library.png", :alt => I18n.t("brand.cuhk_library"), :class => "large-logo" %>
+          <%= image_tag AppConfig[:public_proxy_url] + "/assets/images/cuhk_library_small.png", :alt => I18n.t("brand.cuhk_library"), :class => "small-logo" %>
         </a>
       </div>
     </div>
