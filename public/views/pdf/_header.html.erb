@@ -60,7 +60,7 @@
      position: absolute;
      bottom: 0;
      border: solid 2px gray;
-      width: 95%;
+     width: 95%;
      padding: 1em;
  }
  .repository-information > * {
@@ -79,7 +79,7 @@
      border-bottom: dotted 1px #333;
  }
  ul.toc a::after {
-     content: leader('.') target-counter(attr(href), page);
+     /*content: leader('.') target-counter(attr(href), page);*/
  }
  .print-record-border {
      border-left: dashed 1px #ccc;
@@ -132,6 +132,25 @@
  .inherit {
      font-style: italic;
  }
+ .footer {
+     position: running(footer);
+     font-size: 70%;
+     line-height: 90%;
+     text-align: right;
+     color: #666;
+     margin-top: 0px;
+     padding-top: 0px;
+}
+.copyright {
+    font-size: 120%;
+}
+.copyright:after {
+    content: date("dd.MM.yyyy HH.mm");
+}
+.publisher {
+    line-height: 100%;
+    font-size: 90%;
+}
  <%# Don't show headers/footers on the titlepage %>
  @page :first {
      @top-center {
@@ -158,7 +177,17 @@
          color: #666;
          content: '- ' counter(page) ' -';
      }
+     @bottom-right {
+         content: element(footer);
+     }
+     
  }
         </style>
     </head>
     <body>
+    
+    <div class='footer'>
+        <span>Copyright</span> <span class="copyright">©</span> <span><%= DateTime.now.strftime "%Y" %></span>
+        <br/>
+        <span class="publisher">The Chinese University of Hong Kong Library</span>
+    </div>

@@ -74,9 +74,13 @@ a {
     color: #903090;
 }
 
-a:hover,
-a:active,
 a:focus {
+    color: #903090;
+    text-decoration: none !important;
+}
+
+a:hover,
+a:active {
     color: #903090;
     text-decoration: none !important;
     opacity: .75;
@@ -92,9 +96,14 @@ a:focus {
     border-color: #6d1b6d;
 }
 
-.btn-primary:hover,
-.btn-primary:active,
 .btn-primary:focus {
+    color: #fff;
+    background-color: #6d1b6d !important;
+    border-color: #6d1b6d !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
     color: #fff;
     background-color: #6d1b6d !important;
     border-color: #6d1b6d !important;
@@ -198,7 +207,7 @@ button.page_action .fa {
     margin-left: 5px;
 }
 
-.subnote .b {
+.subnote .b {   
     font-weight: bold;
 }
 
@@ -212,6 +221,11 @@ button.page_action .fa {
 
 .subnote .s {
     text-decoration: line-through;
+}
+
+.note-content .expander {
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
