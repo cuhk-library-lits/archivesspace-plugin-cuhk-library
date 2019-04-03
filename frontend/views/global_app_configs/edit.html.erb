@@ -1,0 +1,22 @@
+<%= setup_context :object => @global_app_config, :title => @global_app_config.config_key %>
+
+<%= form_for @global_app_config, :as => "global_app_config", :url => {:action => :update}, :html => {:class => 'form-horizontal aspace-record-form'}.merge(update_monitor_params(@global_app_config)) do |f| %>
+    <%= form_context :global_app_config, @global_app_config do |form| %>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <div class="record-toolbar">
+                    <div class="save-changes">
+                        <button type="submit" class="btn btn-primary btn-sm"><%= I18n.t("actions.save_prefix") %></button>
+                        <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default btn-sm pull-right" %>
+                    </div>
+                </div>
+                <div class="record-pane">
+                    <h2><%= "AppConfig[#{@global_app_config.config_key}]" %></h2>
+                    <%= form.hidden_input "config_key" %>
+                    <%= form.textarea "config_json", form.obj["config_json"], {:placeholder => I18n.t("plugins.global_app_config.config_json"), :rows => 20} %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% end %>

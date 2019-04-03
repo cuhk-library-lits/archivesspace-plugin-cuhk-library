@@ -1,3 +1,6 @@
 system_menu_controller:
-  - system_status
   - force_reindex
+  - global_app_configs
+
+repository_menu_controller:
+  - repository_app_configs

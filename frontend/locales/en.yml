@@ -1,18 +1,47 @@
 en:
+  global_app_config:
+    _singular: Global setting
+    _plural: Global settings
+    config_key: Key
+    config_json: Value / JSON
+    messages:
+      created: "Global config <strong>%{global_app_config.config_key}</strong> created"
+      updated: "Global config <strong>%{global_app_config.config_key}</strong> updated"
+      deleted: "Global config <strong>%{global_app_config.config_key}</strong> deleted"
+  repository_app_config:
+    _singular: Repository setting
+    _plural: Repository settings
+    config_key: Key
+    config_json: Value / JSON
+    messages:
+      created: "Repository config <strong>%{repository_app_config.config_key}</strong> created"
+      updated: "Repository config <strong>%{repository_app_config.config_key}</strong> updated"
+      deleted: "Repository config <strong>%{repository_app_config.config_key}</strong> deleted"
   plugins:
-    system_status:
-      label: System status
-      title: System status
-      success_message: Success
-      warning_message: Warning
-      error_message: Error
-      info_message: Information
-      save: Save
-      clear: Clear
     statistics:
       title: Usage statistics
       label: Statistics
       remarks: To download report as PDF, please right click on the report and select "Download page as PDF".
       report_urls_not_defined: Statistics report URLs are not defined for this repository.
+    global_app_configs:
+      label: Global settings
+      title: Global settings
+      key: Key
+      json: Value / JSON
+      empty: No global settings
+      new: New global setting
+      save: Save
+    global_app_config:
+      config_json: Value / JSON
+    repository_app_configs:
+      label: Repository settings
+      title: Repository settings
+      key: Key
+      json: Value / JSON
+      empty: No repository settings
+      new: New repository setting
+      save: Save
+    repository_app_config:
+      config_json: Value / JSON
     force_reindex:
       label: Force reindex
