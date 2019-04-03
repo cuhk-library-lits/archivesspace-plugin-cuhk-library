@@ -26,5 +26,8 @@ then
     tar xzf deployables/$OUTFILE_NAME --directory $PLUGIN_DIR/$PLUGIN_NAME
 fi
 
+echo "Setup database..."
+$ASPACE_ROOT/scripts/setup-database.bat
+
 echo "Starting server..."
 $ASPACE_ROOT/archivesspace-dev.bat
