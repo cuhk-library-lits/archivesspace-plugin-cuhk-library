@@ -72,6 +72,7 @@ class AppConfigHelper
                         nil
                     end
                 end
+                AppConfig[app_config_key] = {}
                 AppConfig[app_config_key][repo_code] = app_config_value
             end
         end
