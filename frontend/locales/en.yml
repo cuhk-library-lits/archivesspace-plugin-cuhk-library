@@ -45,3 +45,8 @@ en:
       config_json: Value / JSON
     force_reindex:
       label: Force reindex
+    refresh_pui_app_configs:
+      label: Refresh PUI AppConfigs
+      messages:
+        pui_refresh_success: "Refresh successful"
+        pui_refresh_failed: "Refresh failed"
