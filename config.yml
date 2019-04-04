@@ -1,6 +1,5 @@
 system_menu_controller:
   - global_app_configs
-  - refresh_pui_app_configs
   - force_reindex
 
 repository_menu_controller:

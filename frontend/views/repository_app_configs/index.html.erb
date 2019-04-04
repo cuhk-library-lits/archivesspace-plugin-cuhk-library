@@ -1,9 +1,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="record-toolbar">
-            <div class="btn-group">
-                <%= link_to I18n.t("actions.create"), {:controller => :repository_app_configs, :action => :new}, :class => "btn btn-primary btn-sm" %>
-            </div>
+            <%= link_to I18n.t("actions.create"), {:controller => :repository_app_configs, :action => :new}, :class => "btn btn-primary btn-sm" %>
+            <%= link_to I18n.t("plugins.refresh_pui_app_configs.deploy"), {:controller => :refresh_pui_app_configs, :action => :index}, :class => "btn btn-success btn-sm pull-right" %>
         </div>
         <div class="record-pane">
             <h2><%= I18n.t("plugins.repository_app_configs.title") %></h2>

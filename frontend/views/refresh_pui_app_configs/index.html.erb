@@ -1,3 +1,9 @@
 <div class="col-md-12">
   <%= render_aspace_partial :partial => "shared/flash_messages" %>
+  <div class="record-pane">
+    <div class="form-actions">
+      <p><%= link_to I18n.t("plugins.refresh_pui_app_configs.global_app_config"), {:controller => :global_app_configs, :action => :index}, :class => "btn btn-primary" %></p>
+      <p><%= link_to I18n.t("plugins.refresh_pui_app_configs.repository_app_config"), {:controller => :repository_app_configs, :action => :index}, :class => "btn btn-primary" %></p>
+    </div>
+  </div>
 </div>

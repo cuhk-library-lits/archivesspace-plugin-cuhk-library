@@ -47,6 +47,9 @@ en:
       label: Force reindex
     refresh_pui_app_configs:
       label: Refresh PUI AppConfigs
+      deploy: Deploy
+      global_app_config: Global settings
+      repository_app_config: Repository settings
       messages:
-        pui_refresh_success: "Refresh successful"
-        pui_refresh_failed: "Refresh failed"
+        pui_refresh_success: "Deploy successful"
+        pui_refresh_failed: "Deploy failed"
