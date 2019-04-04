@@ -50,7 +50,14 @@ class AppConfigHelper
                     nil
                 end
             end
-            AppConfig[app_config_key] = app_config_value
+            begin
+                @original_stderr = $stderr
+                $stderr = StringIO.new
+                AppConfig[app_config_key] = app_config_value
+            ensure
+                $stderr = @original_stderr
+                @original_stderr = nil
+            end
         end
 
         @repository_app_configs.each do |repo_code, repo_app_configs|
@@ -72,12 +79,20 @@ class AppConfigHelper
                         nil
                     end
                 end
-                AppConfig[app_config_key] = {}
-                AppConfig[app_config_key][repo_code] = app_config_value
+                begin
+                    @original_stderr = $stderr
+                    $stderr = StringIO.new
+                    AppConfig[app_config_key] = {}
+                    AppConfig[app_config_key][repo_code] = app_config_value
+                ensure
+                    $stderr = @original_stderr
+                    @original_stderr = nil
+                end
+                
             end
         end
 
-        $stdout.puts("AppConfigHelper: Additional config reloaded.")
+        $stdout.puts("AppConfigHelper: PUI Additional config reloaded.")
     end
 
     def global_app_configs
