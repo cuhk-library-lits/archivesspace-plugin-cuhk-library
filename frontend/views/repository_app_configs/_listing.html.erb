@@ -10,7 +10,7 @@
     <% app_configs.each do |app_config| %>
     <tr>
         <td>
-            <%= "AppConfig[#{app_config["config_key"]}]['/repositories/#{app_config["repo_id"]}']" %>
+            <%= "AppConfig[#{app_config["config_key"]}]" %><br/><%= "['#{current_repo['repo_code'].downcase}']" %>
         </td>
         <td>
             <%= app_config["config_json"] %>
