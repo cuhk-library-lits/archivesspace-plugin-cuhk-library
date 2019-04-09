@@ -21,7 +21,6 @@ en:
     statistics:
       title: Usage statistics
       label: Statistics
-      remarks: To download report as PDF, please right click on the report and select "Download page as PDF".
       report_urls_not_defined: Statistics report URLs are not defined for this repository.
     global_app_configs:
       label: Global settings

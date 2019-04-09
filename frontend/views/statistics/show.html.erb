@@ -3,9 +3,6 @@
         <h2>
             <%= I18n.t("plugins.statistics.title") %>
         </h2>
-        <p class="report-remarks">
-            <%= I18n.t("plugins.statistics.remarks") %>
-        </p>
         <div class="report-pane">
             <% if @urls && @urls.any? %>
                 <% @urls.each do |url| %>
