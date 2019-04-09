@@ -140,10 +140,10 @@
 						htmlNiceBreakPoint = niceBreakPoint;
 						if (/<[ ]*\/[ ]*[^>]*$/.test(checkHTMLString)) // Within close tag
 							htmlNiceBreakPoint = checkHTMLString.match(/<[ ]*[^\/]*>.*<[ ]*\/[^>]*$/).index;
-						else if (/(<(?!([ ]*\/[ ]*))[^>]+(?<!([ ]*\/[ ]*))>)[^<]*$/.test(innerHtml.substr(0, niceBreakPoint))) {// HTML tag not yet closed
-							tag = checkHTMLString.match(/<(?!([ ]*\/[ ]*))[^>]+(?<!([ ]*\/[ ]*))>[^<]*$/)[0];
-							if (!/[ ]*(area|base|br|col|command|embed|hr|img|input|keygen|link|meta|param|source|track|wbr)([ ]*|[ ]+[^>]*)/.test(tag))
-								htmlNiceBreakPoint = checkHTMLString.match(/<(?!([ ]*\/[ ]*))[^>]+(?<!([ ]*\/[ ]*))>[^<]*$/).index;
+						else if (/(<(?![ ]*\/[ ]*)[^>\/]*(>|\/[ ]*[^ ]+[ ]*>))[^<]*$/.test(innerHtml.substr(0, niceBreakPoint))) {// HTML tag not yet closed
+							tag = checkHTMLString.match(/(<(?![ ]*\/[ ]*)[^>\/]*(>|\/[ ]*[^ ]+[ ]*>))[^<]*$/)[0];
+							if (!/<[ ]*(area|base|br|col|command|embed|hr|img|input|keygen|link|meta|param|source|track|wbr)([ ]*|[ ]+[^>]*)>/.test(tag))
+								htmlNiceBreakPoint = checkHTMLString.match(/<(<(?![ ]*\/[ ]*)[^>\/]*(>|\/[ ]*[^ ]+[ ]*>))[^<]*$/).index;
 						}
 						else if (/<(?!([ ]*\/[ ]*))[^>]*$/.test(innerHtml.substr(0, niceBreakPoint))) // Within open tag
 							htmlNiceBreakPoint = checkHTMLString.match(/<(?!([ ]*\/[ ]*))[^>]*$/).index;
