@@ -57,17 +57,11 @@ h3 {
 }
 .nav-pills>li a {
     margin-left: 0px !important;
+    background-color: #6d1b6d !important;
 }
-.nav-pills li:nth-child(3n+1) a {
-    background-color: #05538a !important;
-}
-
-.nav-pills li:nth-child(3n+2) a {
-    background-color: #538a05 !important;
-}
-
-.nav-pills li:nth-child(3n+3) a {
-    background-color: #ca9435 !important;
+.nav-pills>li a.active {
+    margin-left: 0px !important;
+    opacity: .8;
 }
 
 a {
