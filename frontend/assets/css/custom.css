@@ -20,3 +20,6 @@
 .icon-highlight {
     color: #0068bc;
 }
+.record-toolbar {
+    overflow: auto;
+}
