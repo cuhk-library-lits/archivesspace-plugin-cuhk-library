@@ -1,5 +1,7 @@
 class CuhkLibRequestsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, only: :make_request
+
   def make_request
     @request = CuhkLibRequestItem.new(params)
 
