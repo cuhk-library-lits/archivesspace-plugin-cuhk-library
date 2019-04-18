@@ -1,3 +1,23 @@
+body.show-env-label {
+    padding-top: 30px;
+}
+
+div.env-label {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background-color: #00629B;
+    color: #FFFF00;
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 0.8;
+    z-index: 16777271;
+    pointer-events: none;
+}
+
 #header>.row {
     border-color: #6d1b6d;
 }

@@ -8,7 +8,7 @@
 	<link href='<%= AppConfig[:public_proxy_url] + "/assets/favicon.ico" %>' rel="shortcut icon" type="image/x-icon" />
 	<title><%=  (@page_title.blank? ? '' : "#{strip_mixed_content(@page_title)} | ") %><%= t('brand.title') %></title>
 	<%= csrf_meta_tags %>
-<%# block cross-origin refer per https://go-to-hellman.blogspot.com/2015/06/protect-reader-privacy-with-referrer.html %>
+	<%# block cross-origin refer per https://go-to-hellman.blogspot.com/2015/06/protect-reader-privacy-with-referrer.html %>
 	<% if AppConfig[:pui_block_referrer] %>
 		<meta name="referrer" content="origin-when-cross-origin" />
 	<% end %>
@@ -39,7 +39,13 @@
 <![endif]-->
 </head>
 
-<body>
+<% environment_label = (AppConfig.has_key?(:site_environment) && AppConfig[:site_environment]) ? AppConfig[:site_environment] : "" %>
+
+<body class="<%= environment_label.to_s.empty? ? '' : 'show-env-label' %>">
+	<% if !environment_label.to_s.empty? %>
+		<div class="env-label"><%= environment_label %></div>
+	<% end %>
+
 	<% if AppConfig.has_key?(:google_tag_manager_id) && AppConfig[:google_tag_manager_id] %>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src='<%= "https://www.googletagmanager.com/ns.html?id=" + AppConfig[:google_tag_manager_id] %>'
