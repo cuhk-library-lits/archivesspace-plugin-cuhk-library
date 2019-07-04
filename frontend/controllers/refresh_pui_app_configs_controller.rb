@@ -4,7 +4,7 @@ class RefreshPuiAppConfigsController < ApplicationController
 
   def index
     pui_refresh_uri = URI(AppConfig[:public_proxy_url] + '/reload_app_config')
-    Net::HTTP.start(pui_refresh_uri.host, pui_refresh_uri.port) do |http|
+    Net::HTTP.start(pui_refresh_uri.host, pui_refresh_uri.port, :use_ssl => pui_refresh_uri.scheme == 'https') do |http|
       request = Net::HTTP::Get.new pui_refresh_uri
       response = http.request request
 
