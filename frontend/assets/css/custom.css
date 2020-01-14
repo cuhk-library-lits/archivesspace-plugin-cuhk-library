@@ -21,7 +21,7 @@
     color: #0068bc;
 }
 .record-toolbar {
-    overflow: auto;
+    overflow: inherit;
 }
 body.show-env-label {
     padding-top: 30px;
