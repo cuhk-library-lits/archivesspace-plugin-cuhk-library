@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PLUGIN_NAME="cuhk-library"
-VERSION="v2.0.2"
+VERSION="v2.0.3"
 
 ASPACE_ROOT="/d/bin/archivesspace"
 PLUGIN_DIR="$ASPACE_ROOT/plugins"
